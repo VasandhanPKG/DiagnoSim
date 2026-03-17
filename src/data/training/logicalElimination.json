@@ -1,0 +1,235 @@
+{
+  "skill": "Logical Elimination",
+  "description": "Actively ruling out diagnoses one by one using clinical evidence, test results, and contradicting findings rather than just picking the most obvious answer.",
+  "interactionType": "elimination",
+  "drillLibrary": [
+    {
+      "id": "le-mi",
+      "disease": "MI",
+      "scenario": "A 60-year-old male with chest pain.",
+      "startingDifferential": ["Myocardial Infarction", "Aortic Dissection", "Pulmonary Embolism", "Pneumothorax", "GERD"],
+      "clues": [
+        { "text": "Chest X-ray shows no mediastinal widening.", "eliminates": ["Aortic Dissection"] },
+        { "text": "Lung ultrasound shows normal lung sliding bilaterally.", "eliminates": ["Pneumothorax"] },
+        { "text": "D-dimer is within normal limits.", "eliminates": ["Pulmonary Embolism"] },
+        { "text": "Pain is not relieved by antacids and is associated with diaphoresis.", "eliminates": ["GERD"] }
+      ],
+      "correctAnswer": "Myocardial Infarction",
+      "commonMistakes": "Eliminating MI prematurely due to a single normal EKG (which can be normal early).",
+      "teachingPoint": "Systematic elimination requires high-sensitivity tests to rule out life-threatening conditions."
+    },
+    {
+      "id": "le-stroke",
+      "disease": "Stroke",
+      "scenario": "A 72-year-old female with sudden right-sided weakness.",
+      "startingDifferential": ["Ischemic Stroke", "Hemorrhagic Stroke", "Hypoglycemia", "Todd's Paralysis", "Complex Migraine"],
+      "clues": [
+        { "text": "Fingerstick glucose is 110 mg/dL.", "eliminates": ["Hypoglycemia"] },
+        { "text": "No history of seizures or post-ictal state.", "eliminates": ["Todd's Paralysis"] },
+        { "text": "Non-contrast CT head shows no intracranial bleeding.", "eliminates": ["Hemorrhagic Stroke"] },
+        { "text": "Patient has no history of headaches and symptoms are purely focal motor.", "eliminates": ["Complex Migraine"] }
+      ],
+      "correctAnswer": "Ischemic Stroke",
+      "commonMistakes": "Assuming ischemic stroke before ruling out hypoglycemia or hemorrhage.",
+      "teachingPoint": "CT head is the gold standard for eliminating hemorrhage, while glucose is the first step to eliminate metabolic mimics."
+    },
+    {
+      "id": "le-app",
+      "disease": "Appendicitis",
+      "scenario": "A 24-year-old female with RLQ pain.",
+      "startingDifferential": ["Appendicitis", "Ectopic Pregnancy", "Ovarian Torsion", "Nephrolithiasis", "Mesenteric Lymphadenitis"],
+      "clues": [
+        { "text": "Urine pregnancy test is negative.", "eliminates": ["Ectopic Pregnancy"] },
+        { "text": "Urinalysis shows no hematuria or crystals.", "eliminates": ["Nephrolithiasis"] },
+        { "text": "Pelvic ultrasound shows normal arterial and venous flow to both ovaries.", "eliminates": ["Ovarian Torsion"] },
+        { "text": "Pain is migratory and associated with anorexia and fever.", "eliminates": ["Mesenteric Lymphadenitis"] }
+      ],
+      "correctAnswer": "Appendicitis",
+      "commonMistakes": "Eliminating ectopic pregnancy without a pregnancy test.",
+      "teachingPoint": "A negative pregnancy test is the most powerful tool to logically eliminate ectopic pregnancy in females of childbearing age."
+    },
+    {
+      "id": "le-pe",
+      "disease": "PE",
+      "scenario": "A 48-year-old male with sudden dyspnea.",
+      "startingDifferential": ["Pulmonary Embolism", "Pneumothorax", "Myocardial Infarction", "Pneumonia", "Asthma Exacerbation"],
+      "clues": [
+        { "text": "Lung auscultation is clear with no wheezing.", "eliminates": ["Asthma Exacerbation"] },
+        { "text": "Chest X-ray shows no focal infiltrates or consolidations.", "eliminates": ["Pneumonia"] },
+        { "text": "Chest X-ray shows no pleural line or lung collapse.", "eliminates": ["Pneumothorax"] },
+        { "text": "EKG shows sinus tachycardia but no ST changes; Troponin is negative.", "eliminates": ["Myocardial Infarction"] }
+      ],
+      "correctAnswer": "Pulmonary Embolism",
+      "commonMistakes": "Eliminating PE based on a normal EKG or CXR (which are often normal in PE).",
+      "teachingPoint": "PE is often a 'diagnosis of exclusion' on basic imaging (normal CXR with severe dyspnea)."
+    },
+    {
+      "id": "le-pneu",
+      "disease": "Pneumonia",
+      "scenario": "An 80-year-old female with cough and fever.",
+      "startingDifferential": ["Pneumonia", "Heart Failure", "Bronchitis", "Pulmonary Embolism", "Lung Cancer"],
+      "clues": [
+        { "text": "BNP is 80 pg/mL (normal < 100).", "eliminates": ["Heart Failure"] },
+        { "text": "D-dimer is negative.", "eliminates": ["Pulmonary Embolism"] },
+        { "text": "Chest X-ray shows a dense consolidation in the RLL.", "eliminates": ["Bronchitis"] },
+        { "text": "Symptoms are acute (3 days) with high fever and leukocytosis.", "eliminates": ["Lung Cancer"] }
+      ],
+      "correctAnswer": "Pneumonia",
+      "commonMistakes": "Eliminating pneumonia in the elderly because they lack a high fever (they often don't mount one).",
+      "teachingPoint": "BNP and D-dimer are powerful tools to eliminate HF and PE when pneumonia is suspected."
+    },
+    {
+      "id": "le-men",
+      "disease": "Meningitis",
+      "scenario": "A 20-year-old male with headache and fever.",
+      "startingDifferential": ["Meningitis", "Encephalitis", "Subarachnoid Hemorrhage", "Brain Abscess", "Migraine"],
+      "clues": [
+        { "text": "CT head shows no blood in the subarachnoid space.", "eliminates": ["Subarachnoid Hemorrhage"] },
+        { "text": "CT head with contrast shows no ring-enhancing lesions.", "eliminates": ["Brain Abscess"] },
+        { "text": "Patient is alert and oriented with no focal neurological deficits or seizures.", "eliminates": ["Encephalitis"] },
+        { "text": "Patient has high fever and significant nuchal rigidity.", "eliminates": ["Migraine"] }
+      ],
+      "correctAnswer": "Meningitis",
+      "commonMistakes": "Eliminating meningitis before encephalitis (which requires altered mental status).",
+      "teachingPoint": "Encephalitis is eliminated by the absence of altered mental status or focal brain dysfunction."
+    },
+    {
+      "id": "le-dvt",
+      "disease": "DVT",
+      "scenario": "A 55-year-old female with leg swelling.",
+      "startingDifferential": ["Deep Vein Thrombosis", "Cellulitis", "Baker's Cyst", "Lymphedema", "Venous Insufficiency"],
+      "clues": [
+        { "text": "Leg is not erythematous or warm; no fever.", "eliminates": ["Cellulitis"] },
+        { "text": "Swelling is unilateral and acute (2 days).", "eliminates": ["Lymphedema", "Venous Insufficiency"] },
+        { "text": "Ultrasound of the popliteal fossa shows no fluid collection.", "eliminates": ["Baker's Cyst"] }
+      ],
+      "correctAnswer": "Deep Vein Thrombosis",
+      "commonMistakes": "Eliminating DVT because the leg isn't 'red enough' (cellulitis is the mimic).",
+      "teachingPoint": "DVT is eliminated by a negative compression ultrasound, the gold standard."
+    },
+    {
+      "id": "le-sepsis",
+      "disease": "Sepsis",
+      "scenario": "A 70-year-old male with hypotension and fever.",
+      "startingDifferential": ["Sepsis", "Cardiogenic Shock", "Hypovolemic Shock", "Anaphylactic Shock", "Neurogenic Shock"],
+      "clues": [
+        { "text": "No history of allergen exposure; no hives or wheezing.", "eliminates": ["Anaphylactic Shock"] },
+        { "text": "No history of trauma; skin is warm and flushed.", "eliminates": ["Neurogenic Shock"] },
+        { "text": "Echocardiogram shows normal EF and no wall motion abnormalities.", "eliminates": ["Cardiogenic Shock"] },
+        { "text": "Patient has received 3L of fluids with minimal improvement in MAP; IVC is full on ultrasound.", "eliminates": ["Hypovolemic Shock"] }
+      ],
+      "correctAnswer": "Sepsis",
+      "commonMistakes": "Eliminating sepsis in favor of hypovolemia without checking fluid responsiveness.",
+      "teachingPoint": "Shock differentiation requires evaluating the heart (Echo) and fluid status (IVC/Fluid challenge)."
+    },
+    {
+      "id": "le-dka",
+      "disease": "DKA",
+      "scenario": "A 15-year-old with abdominal pain and vomiting.",
+      "startingDifferential": ["Diabetic Ketoacidosis", "Appendicitis", "Gastroenteritis", "Toxic Ingestion", "Pancreatitis"],
+      "clues": [
+        { "text": "Serum lipase is normal.", "eliminates": ["Pancreatitis"] },
+        { "text": "Abdominal ultrasound shows a compressible appendix of normal diameter.", "eliminates": ["Appendicitis"] },
+        { "text": "Toxicology screen is negative.", "eliminates": ["Toxic Ingestion"] },
+        { "text": "Patient has Kussmaul breathing and a blood glucose of 450 mg/dL.", "eliminates": ["Gastroenteritis"] }
+      ],
+      "correctAnswer": "Diabetic Ketoacidosis",
+      "commonMistakes": "Eliminating DKA because the patient has 'surgical' abdominal pain.",
+      "teachingPoint": "DKA can mimic a surgical abdomen; glucose and ketones are the keys to elimination."
+    },
+    {
+      "id": "le-ana",
+      "disease": "Anaphylaxis",
+      "scenario": "A 25-year-old with sudden wheezing and hives.",
+      "startingDifferential": ["Anaphylaxis", "Asthma Exacerbation", "Panic Attack", "Urticaria", "Foreign Body Aspiration"],
+      "clues": [
+        { "text": "Symptoms are multi-system (skin + respiratory).", "eliminates": ["Asthma Exacerbation", "Urticaria", "Foreign Body Aspiration"] },
+        { "text": "Patient is hypotensive (BP 80/50) and has visible angioedema.", "eliminates": ["Panic Attack"] }
+      ],
+      "correctAnswer": "Anaphylaxis",
+      "commonMistakes": "Eliminating anaphylaxis in favor of asthma when hives are present.",
+      "teachingPoint": "Multi-system involvement (skin + another system) is the 'rule-in' for anaphylaxis and 'rule-out' for isolated asthma."
+    },
+    {
+      "id": "le-hf",
+      "disease": "Heart Failure",
+      "scenario": "A 68-year-old with dyspnea and edema.",
+      "startingDifferential": ["Heart Failure", "COPD Exacerbation", "Pneumonia", "Pulmonary Embolism", "Cirrhosis"],
+      "clues": [
+        { "text": "Liver ultrasound shows no cirrhosis; albumin is normal.", "eliminates": ["Cirrhosis"] },
+        { "text": "D-dimer is negative.", "eliminates": ["Pulmonary Embolism"] },
+        { "text": "Chest X-ray shows no focal infiltrates but has Kerley B lines.", "eliminates": ["Pneumonia"] },
+        { "text": "Patient has JVD and an S3 gallop; no wheezing.", "eliminates": ["COPD Exacerbation"] }
+      ],
+      "correctAnswer": "Heart Failure",
+      "commonMistakes": "Eliminating HF because the patient has a history of smoking (assuming COPD).",
+      "teachingPoint": "JVD and S3 are highly specific signs that eliminate non-cardiac causes of dyspnea."
+    },
+    {
+      "id": "le-uti",
+      "disease": "UTI",
+      "scenario": "A 32-year-old female with dysuria.",
+      "startingDifferential": ["Cystitis", "Pyelonephritis", "Vaginitis", "Urethritis", "Nephrolithiasis"],
+      "clues": [
+        { "text": "No flank pain or CVA tenderness; afebrile.", "eliminates": ["Pyelonephritis"] },
+        { "text": "No hematuria; CT KUB shows no stones.", "eliminates": ["Nephrolithiasis"] },
+        { "text": "Pelvic exam shows no discharge or cervical motion tenderness.", "eliminates": ["Vaginitis", "Urethritis"] }
+      ],
+      "correctAnswer": "Cystitis",
+      "commonMistakes": "Eliminating UTI in favor of vaginitis without a pelvic exam.",
+      "teachingPoint": "The absence of systemic signs (fever/flank pain) eliminates pyelonephritis, leaving cystitis as the primary diagnosis."
+    }
+  ],
+  "evaluationRubric": {
+    "correct": "Successfully eliminated all incorrect diagnoses using the provided clues; correct diagnosis remains.",
+    "partiallyCorrect": "Eliminated most incorrect diagnoses but kept one or two wrong ones alongside the correct one.",
+    "wrong": "Eliminated the correct diagnosis or failed to eliminate obvious distractors.",
+    "scoringFormula": "Score = (CorrectEliminations / TotalEliminations) * 100 - (IncorrectEliminations * 20)",
+    "commonErrors": [
+      { "error": "Premature elimination (ruling out the correct answer)", "deduction": 50 },
+      { "error": "Ignoring a contradicting clue", "deduction": 15 }
+    ]
+  },
+  "progressionStages": [
+    {
+      "stage": 1,
+      "name": "Guided Recognition",
+      "scaffolding": "Each clue explicitly states which diagnosis it eliminates (e.g., 'This rules out X').",
+      "interaction": "Click to eliminate.",
+      "passCriteria": "90% accuracy on 10 drills."
+    },
+    {
+      "stage": 2,
+      "name": "Unguided Application",
+      "scaffolding": "Clues are provided without explanation; user must decide what they eliminate.",
+      "interaction": "Select clue -> Select diagnosis to eliminate.",
+      "passCriteria": "85% accuracy on 12 drills."
+    },
+    {
+      "stage": 3,
+      "name": "Pressured Performance",
+      "scaffolding": "Clues are released on a timer (every 10 seconds).",
+      "interaction": "Eliminate before the next clue arrives.",
+      "passCriteria": "80% accuracy on 12 drills."
+    },
+    {
+      "stage": 4,
+      "name": "Expert Calibration",
+      "scaffolding": "Includes 'red herring' clues that don't eliminate anything.",
+      "interaction": "Eliminate + Rate confidence in each elimination.",
+      "passCriteria": "80% accuracy + Calibration score > 0.8."
+    }
+  ],
+  "adaptiveRules": {
+    "repeatThreshold": 70,
+    "increaseDifficulty": "3 consecutive scores > 90%",
+    "pullBack": "2 consecutive scores < 50%",
+    "prioritization": "Prioritize cases where the correct diagnosis was eliminated prematurely."
+  },
+  "masteryDefinition": {
+    "minScore": 95,
+    "speedBenchmark": "Average < 8 seconds per elimination",
+    "consistency": "Zero premature eliminations of the correct diagnosis in Stage 3",
+    "calibration": "Confidence in correct eliminations is > 90%"
+  }
+}

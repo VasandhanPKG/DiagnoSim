@@ -1,0 +1,347 @@
+{
+  "stages": [
+    {
+      "id": 1,
+      "name": "Guided Recognition",
+      "description": "Critical signals are highlighted or hinted. Focus on learning the patterns.",
+      "hintsVisible": true,
+      "timeLimit": null,
+      "noiseLevel": "low",
+      "passCriteria": { "minScore": 80, "minDrills": 3 }
+    },
+    {
+      "id": 2,
+      "name": "Unguided Detection",
+      "description": "No hints provided. You must rely on your clinical judgment.",
+      "hintsVisible": false,
+      "timeLimit": null,
+      "noiseLevel": "medium",
+      "passCriteria": { "minScore": 85, "minDrills": 5 }
+    },
+    {
+      "id": 3,
+      "name": "Pressured Performance",
+      "description": "Time is limited. Distinguish signals from noise under pressure.",
+      "hintsVisible": false,
+      "timeLimit": 120,
+      "noiseLevel": "high",
+      "passCriteria": { "minScore": 90, "minDrills": 5 }
+    },
+    {
+      "id": 4,
+      "name": "Expert Calibration",
+      "description": "Assess your confidence. Overconfidence in noise is as dangerous as missing signals.",
+      "hintsVisible": false,
+      "timeLimit": 90,
+      "noiseLevel": "extreme",
+      "passCriteria": { "minScore": 95, "minDrills": 10 }
+    }
+  ],
+  "adaptiveRules": {
+    "repeatDrill": "If score < 70% or critical signal missed",
+    "increaseDifficulty": "If 3 consecutive drills > 90%",
+    "pullBack": "If 2 consecutive drills < 60%"
+  },
+  "drills": [
+    {
+      "id": "mi-001",
+      "disease": "Myocardial Infarction (MI)",
+      "scenario": "A 62-year-old male with a history of hypertension and smoking presents to the ED with 'indigestion' that started 2 hours ago while gardening.",
+      "findings": [
+        { "id": "s1", "text": "Substernal pressure radiating to left jaw", "type": "signal", "explanation": "Classic anginal distribution reflecting myocardial ischemia." },
+        { "id": "s2", "text": "Diaphoresis and cool, clammy skin", "type": "signal", "explanation": "Reflects sympathetic nervous system activation due to cardiogenic stress." },
+        { "id": "s3", "text": "New-onset S4 gallop on auscultation", "type": "signal", "explanation": "Indicates decreased ventricular compliance during acute ischemia." },
+        { "id": "s4", "text": "ST-segment elevation in leads V1-V4", "type": "signal", "explanation": "Direct evidence of transmural injury in the anterior wall." },
+        { "id": "d1", "text": "Sharp pain that worsens with deep inspiration", "type": "distractor", "explanation": "Suggests pleuritic pain or pericarditis rather than typical MI." },
+        { "id": "d2", "text": "Pain relieved immediately by antacids", "type": "distractor", "explanation": "Points toward GERD, though MI can sometimes mimic GI distress." },
+        { "id": "d3", "text": "Tenderness to palpation over the sternum", "type": "distractor", "explanation": "Suggests musculoskeletal costochondritis rather than visceral cardiac pain." },
+        { "id": "n1", "text": "History of mild seasonal allergies", "type": "noise" },
+        { "id": "n2", "text": "Wears reading glasses for presbyopia", "type": "noise" },
+        { "id": "n3", "text": "Recent minor bruise on the right shin", "type": "noise" },
+        { "id": "n4", "text": "Enjoys playing chess on weekends", "type": "noise" },
+        { "id": "n5", "text": "Slightly overgrown fingernails", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d2", "d3"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    },
+    {
+      "id": "stroke-001",
+      "disease": "Stroke",
+      "scenario": "A 74-year-old female is brought in by her daughter who noticed her mother was 'acting strange' during breakfast.",
+      "findings": [
+        { "id": "s1", "text": "Sudden onset right-sided facial drooping", "type": "signal", "explanation": "Indicates upper motor neuron involvement in the contralateral hemisphere." },
+        { "id": "s2", "text": "Expressive aphasia (difficulty finding words)", "type": "signal", "explanation": "Suggests involvement of Broca's area in the dominant hemisphere." },
+        { "id": "s3", "text": "Extensor plantar response (Babinski sign) on the right", "type": "signal", "explanation": "Objective sign of corticospinal tract dysfunction." },
+        { "id": "s4", "text": "Loss of peripheral vision in the right visual field", "type": "signal", "explanation": "Homonymous hemianopsia indicates post-chiasmatic visual pathway lesion." },
+        { "id": "d1", "text": "Gradual onset of confusion over 3 days", "type": "distractor", "explanation": "More characteristic of metabolic encephalopathy or infection than acute stroke." },
+        { "id": "d2", "text": "Bilateral hand tremors that improve with alcohol", "type": "distractor", "explanation": "Suggests essential tremor rather than acute focal neurological deficit." },
+        { "id": "d3", "text": "History of frequent tension headaches", "type": "distractor", "explanation": "Common benign condition that can distract from acute focal signs." },
+        { "id": "n1", "text": "Uses a specific brand of lavender soap", "type": "noise" },
+        { "id": "n2", "text": "Has a collection of antique thimbles", "type": "noise" },
+        { "id": "n3", "text": "Mild osteoarthritis in the left knee", "type": "noise" },
+        { "id": "n4", "text": "Prefers tea over coffee", "type": "noise" },
+        { "id": "n5", "text": "Recent haircut is slightly uneven", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d1"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    },
+    {
+      "id": "app-001",
+      "disease": "Appendicitis",
+      "scenario": "A 19-year-old college student presents with abdominal pain that started around the umbilicus and moved to the lower right side.",
+      "findings": [
+        { "id": "s1", "text": "Pain localized to McBurney's point", "type": "signal", "explanation": "Classic anatomical location for inflamed appendix irritation of the peritoneum." },
+        { "id": "s2", "text": "Rebound tenderness in the RLQ", "type": "signal", "explanation": "Indicates peritoneal inflammation, a hallmark of advanced appendicitis." },
+        { "id": "s3", "text": "Positive Rovsing's sign", "type": "signal", "explanation": "Referred pain to RLQ when LLQ is palpated suggests peritoneal irritation." },
+        { "id": "s4", "text": "Low-grade fever and leukocytosis", "type": "signal", "explanation": "Systemic markers of acute inflammatory/infectious process." },
+        { "id": "d1", "text": "Pain that radiates to the groin and scrotum", "type": "distractor", "explanation": "More characteristic of nephrolithiasis (kidney stones) than appendicitis." },
+        { "id": "d2", "text": "History of multiple episodes of similar pain", "type": "distractor", "explanation": "Suggests chronic condition like IBD or IBS rather than acute appendicitis." },
+        { "id": "d3", "text": "Pain significantly improved after a large bowel movement", "type": "distractor", "explanation": "Points toward functional bowel issues or constipation." },
+        { "id": "n1", "text": "Wearing a university sweatshirt", "type": "noise" },
+        { "id": "n2", "text": "Has a small tattoo on the left ankle", "type": "noise" },
+        { "id": "n3", "text": "Allergic to poison ivy", "type": "noise" },
+        { "id": "n4", "text": "Recent dental cleaning was uneventful", "type": "noise" },
+        { "id": "n5", "text": "Owns a blue bicycle", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d1", "d2"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    },
+    {
+      "id": "pe-001",
+      "disease": "Pulmonary Embolism (PE)",
+      "scenario": "A 45-year-old woman presents with sudden shortness of breath after returning from a 14-hour flight.",
+      "findings": [
+        { "id": "s1", "text": "Sudden onset pleuritic chest pain", "type": "signal", "explanation": "Reflects pulmonary infarction or pleural irritation from the embolus." },
+        { "id": "s2", "text": "Tachycardia (HR 115 bpm) and tachypnea", "type": "signal", "explanation": "Compensatory mechanisms for acute ventilation-perfusion mismatch." },
+        { "id": "s3", "text": "Unilateral calf swelling and tenderness", "type": "signal", "explanation": "Suggests DVT as the source of the pulmonary embolus." },
+        { "id": "s4", "text": "Hypoxemia with a widened A-a gradient", "type": "signal", "explanation": "Physiological evidence of impaired gas exchange due to vascular obstruction." },
+        { "id": "d1", "text": "Productive cough with thick green sputum", "type": "distractor", "explanation": "Suggests pneumonia or bronchitis rather than acute PE." },
+        { "id": "d2", "text": "Pain that is reproducible by pressing on the ribs", "type": "distractor", "explanation": "Points toward musculoskeletal chest wall pain." },
+        { "id": "d3", "text": "History of asthma since childhood", "type": "distractor", "explanation": "Can confuse the diagnosis of acute dyspnea but usually has wheezing." },
+        { "id": "n1", "text": "Carrying a paperback mystery novel", "type": "noise" },
+        { "id": "n2", "text": "Has a slight tan from a recent vacation", "type": "noise" },
+        { "id": "n3", "text": "Wears a silver wedding band", "type": "noise" },
+        { "id": "n4", "text": "Left-handed for writing", "type": "noise" },
+        { "id": "n5", "text": "Recent minor paper cut on index finger", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d1", "d3"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    },
+    {
+      "id": "pneu-001",
+      "disease": "Pneumonia",
+      "scenario": "An 82-year-old nursing home resident is brought in with increased confusion and a new cough.",
+      "findings": [
+        { "id": "s1", "text": "Dullness to percussion in the right base", "type": "signal", "explanation": "Indicates consolidation of lung tissue by inflammatory fluid." },
+        { "id": "s2", "text": "Bronchial breath sounds in the periphery", "type": "signal", "explanation": "Reflects sound transmission through consolidated lung." },
+        { "id": "s3", "text": "Inspiratory crackles (rales) that do not clear with cough", "type": "signal", "explanation": "Sign of fluid or exudate in the alveolar spaces." },
+        { "id": "s4", "text": "Oxygen saturation 89% on room air", "type": "signal", "explanation": "Evidence of impaired gas exchange due to alveolar filling." },
+        { "id": "d1", "text": "Bilateral expiratory wheezing", "type": "distractor", "explanation": "More characteristic of COPD or asthma than focal pneumonia." },
+        { "id": "d2", "text": "Jugular venous distension (JVD)", "type": "distractor", "explanation": "Suggests heart failure or fluid overload rather than primary pneumonia." },
+        { "id": "d3", "text": "History of chronic smoker's cough", "type": "distractor", "explanation": "Can mask the new, acute change in cough quality." },
+        { "id": "n1", "text": "Wearing a knitted cardigan", "type": "noise" },
+        { "id": "n2", "text": "Has a photo of grandchildren in her purse", "type": "noise" },
+        { "id": "n3", "text": "Mild hearing loss in the right ear", "type": "noise" },
+        { "id": "n4", "text": "Likes to watch game shows", "type": "noise" },
+        { "id": "n5", "text": "Has a small scar from a 1950s appendectomy", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d1", "d2"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    },
+    {
+      "id": "men-001",
+      "disease": "Meningitis",
+      "scenario": "A 22-year-old graduate student is brought to the ED by roommates because he is 'unusually sleepy' and has a severe headache.",
+      "findings": [
+        { "id": "s1", "text": "Nuchal rigidity (stiff neck)", "type": "signal", "explanation": "Reflects meningeal irritation and protective muscle spasm." },
+        { "id": "s2", "text": "Photophobia (pain with bright light)", "type": "signal", "explanation": "Common symptom of meningeal inflammation affecting cranial nerves." },
+        { "id": "s3", "text": "Non-blanching petechial rash on the trunk", "type": "signal", "explanation": "Highly suggestive of meningococcemia and vasculitis." },
+        { "id": "s4", "text": "Positive Brudzinski's sign", "type": "signal", "explanation": "Involuntary hip flexion when neck is flexed indicates severe meningeal irritation." },
+        { "id": "d1", "text": "History of frequent migraine headaches", "type": "distractor", "explanation": "Can lead to delay in seeking care for a 'different' kind of headache." },
+        { "id": "d2", "text": "Rhinorrhea and sore throat for 2 days", "type": "distractor", "explanation": "Suggests common viral URI, which can precede but is not diagnostic of meningitis." },
+        { "id": "d3", "text": "Pain with eye movement", "type": "distractor", "explanation": "Can occur in optic neuritis or simple viral syndromes, less specific than photophobia." },
+        { "id": "n1", "text": "Backpack contains a laptop and textbooks", "type": "noise" },
+        { "id": "n2", "text": "Has a gym membership card", "type": "noise" },
+        { "id": "n3", "text": "Wears contact lenses", "type": "noise" },
+        { "id": "n4", "text": "Recent trip to a local coffee shop", "type": "noise" },
+        { "id": "n5", "text": "Has a slight stutter when nervous", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d1", "d2"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    },
+    {
+      "id": "dvt-001",
+      "disease": "Deep Vein Thrombosis (DVT)",
+      "scenario": "A 55-year-old male presents with swelling and pain in his left leg that started yesterday after a long day of driving.",
+      "findings": [
+        { "id": "s1", "text": "Unilateral pitting edema of the left ankle", "type": "signal", "explanation": "Reflects venous outflow obstruction and increased hydrostatic pressure." },
+        { "id": "s2", "text": "Calf circumference 3cm larger than the right side", "type": "signal", "explanation": "Objective measure of significant unilateral swelling." },
+        { "id": "s3", "text": "Tenderness along the deep venous system", "type": "signal", "explanation": "Direct sign of inflammation/thrombosis in the vein." },
+        { "id": "s4", "text": "Dilation of superficial collateral veins", "type": "signal", "explanation": "Reflects shunting of blood due to deep venous obstruction." },
+        { "id": "d1", "text": "Bilateral leg swelling that improves with elevation", "type": "distractor", "explanation": "More characteristic of chronic venous insufficiency or heart failure." },
+        { "id": "d2", "text": "Sharp pain in the calf when walking (claudication)", "type": "distractor", "explanation": "Suggests peripheral arterial disease rather than venous thrombosis." },
+        { "id": "d3", "text": "History of a recent minor ankle sprain", "type": "distractor", "explanation": "Can provide a false 'alternative' explanation for unilateral pain." },
+        { "id": "n1", "text": "Driving a mid-sized sedan", "type": "noise" },
+        { "id": "n2", "text": "Wearing compression-style athletic socks", "type": "noise" },
+        { "id": "n3", "text": "Has a small mole on the right shoulder", "type": "noise" },
+        { "id": "n4", "text": "Enjoys gardening on weekends", "type": "noise" },
+        { "id": "n5", "text": "Wears a digital watch", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d1", "d3"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    },
+    {
+      "id": "sepsis-001",
+      "disease": "Sepsis",
+      "scenario": "A 68-year-old male with a history of diabetes is brought in by EMS with altered mental status and a fever.",
+      "findings": [
+        { "id": "s1", "text": "Mean Arterial Pressure (MAP) of 60 mmHg", "type": "signal", "explanation": "Indicates critical hypotension and impaired organ perfusion." },
+        { "id": "s2", "text": "Lactate level of 4.2 mmol/L", "type": "signal", "explanation": "Marker of anaerobic metabolism and tissue dysoxia." },
+        { "id": "s3", "text": "Oliguria (urine output < 0.5 mL/kg/hr)", "type": "signal", "explanation": "Sign of acute kidney injury due to hypoperfusion." },
+        { "id": "s4", "text": "Capillary refill time > 4 seconds", "type": "signal", "explanation": "Clinical sign of poor peripheral microcirculatory perfusion." },
+        { "id": "d1", "text": "Isolated fever of 38.5°C without other symptoms", "type": "distractor", "explanation": "Fever alone is common and does not define sepsis without organ dysfunction." },
+        { "id": "d2", "text": "History of chronic stable hyperglycemia", "type": "distractor", "explanation": "Common in diabetics and can distract from acute metabolic derangement." },
+        { "id": "d3", "text": "Mild productive cough for 1 week", "type": "distractor", "explanation": "May be the source, but the focus should be on the systemic response (sepsis)." },
+        { "id": "n1", "text": "Wearing a hospital gown", "type": "noise" },
+        { "id": "n2", "text": "Has a pair of bifocals in his pocket", "type": "noise" },
+        { "id": "n3", "text": "Wears a medical alert bracelet for diabetes", "type": "noise" },
+        { "id": "n4", "text": "Has a small scar on his forehead", "type": "noise" },
+        { "id": "n5", "text": "Prefers to sleep on his left side", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d1", "d2"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    },
+    {
+      "id": "dka-001",
+      "disease": "DKA",
+      "scenario": "A 16-year-old female with Type 1 Diabetes presents with nausea, vomiting, and abdominal pain.",
+      "findings": [
+        { "id": "s1", "text": "Deep, rapid respirations (Kussmaul breathing)", "type": "signal", "explanation": "Compensatory respiratory alkalosis for profound metabolic acidosis." },
+        { "id": "s2", "text": "Fruity odor on the breath", "type": "signal", "explanation": "Direct clinical sign of acetone production from ketosis." },
+        { "id": "s3", "text": "Serum bicarbonate of 12 mEq/L", "type": "signal", "explanation": "Objective evidence of significant metabolic acidosis." },
+        { "id": "s4", "text": "Strongly positive ketones in the urine", "type": "signal", "explanation": "Confirms the presence of ketosis, a defining feature of DKA." },
+        { "id": "d1", "text": "Blood glucose of 180 mg/dL", "type": "distractor", "explanation": "DKA usually presents with much higher glucose (>250), though euglycemic DKA exists." },
+        { "id": "d2", "text": "History of recent viral gastroenteritis", "type": "distractor", "explanation": "Can be a trigger for DKA but can also be a false alternative diagnosis for vomiting." },
+        { "id": "d3", "text": "Mild tenderness in the epigastrium", "type": "distractor", "explanation": "Common in DKA but can lead to unnecessary surgical consultation." },
+        { "id": "n1", "text": "Wearing a school uniform", "type": "noise" },
+        { "id": "n2", "text": "Has a smartphone with a cracked screen", "type": "noise" },
+        { "id": "n3", "text": "Allergic to shellfish", "type": "noise" },
+        { "id": "n4", "text": "Recent math test went well", "type": "noise" },
+        { "id": "n5", "text": "Uses a specific brand of lip balm", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d1", "d2"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    },
+    {
+      "id": "ana-001",
+      "disease": "Anaphylaxis",
+      "scenario": "A 30-year-old male is brought to the ED after eating at a Thai restaurant. He is complaining of throat tightness.",
+      "findings": [
+        { "id": "s1", "text": "Inspiratory stridor and hoarseness", "type": "signal", "explanation": "Indicates critical upper airway edema and impending obstruction." },
+        { "id": "s2", "text": "Diffuse urticaria (hives) and angioedema", "type": "signal", "explanation": "Classic cutaneous manifestations of systemic IgE-mediated reaction." },
+        { "id": "s3", "text": "Wheezing on lung auscultation", "type": "signal", "explanation": "Reflects lower airway bronchoconstriction." },
+        { "id": "s4", "text": "Systolic blood pressure of 85 mmHg", "type": "signal", "explanation": "Indicates anaphylactic shock due to massive vasodilation." },
+        { "id": "d1", "text": "Isolated itchy throat without visible swelling", "type": "distractor", "explanation": "Common in mild oral allergy syndrome, not necessarily anaphylaxis." },
+        { "id": "d2", "text": "History of mild seasonal hay fever", "type": "distractor", "explanation": "Atopic history is relevant but not diagnostic of the acute event." },
+        { "id": "d3", "text": "Nausea and one episode of loose stool", "type": "distractor", "explanation": "Can be part of anaphylaxis but also common in simple food poisoning." },
+        { "id": "n1", "text": "Wearing a blue t-shirt", "type": "noise" },
+        { "id": "n2", "text": "Has a wallet with three credit cards", "type": "noise" },
+        { "id": "n3", "text": "Right-handed", "type": "noise" },
+        { "id": "n4", "text": "Recent haircut", "type": "noise" },
+        { "id": "n5", "text": "Wears a fitness tracker", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d1", "d3"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    },
+    {
+      "id": "hf-001",
+      "disease": "Heart Failure",
+      "scenario": "A 72-year-old male presents with worsening shortness of breath and the need to sleep on three pillows.",
+      "findings": [
+        { "id": "s1", "text": "Paroxysmal nocturnal dyspnea (PND)", "type": "signal", "explanation": "Highly specific symptom of left ventricular dysfunction and pulmonary congestion." },
+        { "id": "s2", "text": "Third heart sound (S3) gallop", "type": "signal", "explanation": "Sign of rapid ventricular filling into a dilated, non-compliant ventricle." },
+        { "id": "s3", "text": "Bilateral pulmonary crackles that don't clear with cough", "type": "signal", "explanation": "Reflects alveolar edema from high pulmonary venous pressures." },
+        { "id": "s4", "text": "Jugular Venous Distension (JVD) at 45 degrees", "type": "signal", "explanation": "Direct clinical measure of elevated right atrial pressure." },
+        { "id": "d1", "text": "History of chronic stable COPD", "type": "distractor", "explanation": "Can coexist and make the cause of dyspnea difficult to distinguish." },
+        { "id": "d2", "text": "Mild productive cough with white phlegm", "type": "distractor", "explanation": "Common in HF ('cardiac asthma') but can be mistaken for simple bronchitis." },
+        { "id": "d3", "text": "Trace ankle edema at the end of the day", "type": "distractor", "explanation": "Very non-specific; can occur in healthy elderly or due to medications." },
+        { "id": "n1", "text": "Wearing a plaid shirt", "type": "noise" },
+        { "id": "n2", "text": "Has a set of car keys in his hand", "type": "noise" },
+        { "id": "n3", "text": "Uses a cane for balance", "type": "noise" },
+        { "id": "n4", "text": "Enjoys crossword puzzles", "type": "noise" },
+        { "id": "n5", "text": "Has a small age spot on his left hand", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d1", "d2"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    },
+    {
+      "id": "uti-001",
+      "disease": "UTI",
+      "scenario": "An 85-year-old female is brought from her assisted living facility because she is 'not herself' and has been falling.",
+      "findings": [
+        { "id": "s1", "text": "New-onset urinary incontinence", "type": "signal", "explanation": "Common presentation of UTI in the elderly due to bladder irritability." },
+        { "id": "s2", "text": "Suprapubic tenderness on palpation", "type": "signal", "explanation": "Reflects inflammation of the bladder wall (cystitis)." },
+        { "id": "s3", "text": "Positive leukocyte esterase and nitrites on dipstick", "type": "signal", "explanation": "Biochemical evidence of bacteriuria and pyuria." },
+        { "id": "s4", "text": "Acute worsening of baseline cognitive function", "type": "signal", "explanation": "Delirium is a frequent systemic manifestation of infection in the elderly." },
+        { "id": "d1", "text": "Chronic asymptomatic bacteriuria", "type": "distractor", "explanation": "Common in elderly and can lead to over-diagnosis of UTI." },
+        { "id": "d2", "text": "History of mild dementia", "type": "distractor", "explanation": "Can mask acute delirium if not carefully compared to baseline." },
+        { "id": "d3", "text": "Dark, concentrated urine with a strong odor", "type": "distractor", "explanation": "More often a sign of dehydration than infection." },
+        { "id": "n1", "text": "Wearing a floral print dress", "type": "noise" },
+        { "id": "n2", "text": "Has a small bottle of water in her walker bag", "type": "noise" },
+        { "id": "n3", "text": "Wears a hearing aid in the left ear", "type": "noise" },
+        { "id": "n4", "text": "Recent meal was chicken and rice", "type": "noise" },
+        { "id": "n5", "text": "Has a favorite purple shawl", "type": "noise" }
+      ],
+      "rubric": {
+        "minSignals": 3,
+        "commonMistakes": ["d1", "d3"],
+        "precisionFormula": "TP / (TP + FP)",
+        "recallFormula": "TP / (TP + FN)"
+      }
+    }
+  ]
+}

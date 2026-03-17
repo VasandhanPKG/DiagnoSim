@@ -1,0 +1,5 @@
+{
+  "name": "DiagnoSim",
+  "description": "DiagnoSim is a comprehensive AI-powered interactive clinical diagnosis training platform designed to enhance the diagnostic reasoning skills of medical students. The platform features a progressive curriculum with 50 levels of difficulty, daily challenges, and a dedicated Cognitive Training Lab. The Training Lab focuses on six core cognitive skills: Signal Detection, Pattern Recognition, Hypothesis Generation, Logical Elimination, Probabilistic Thinking, and Bias Recognition. Each skill includes multiple stages that must be unlocked sequentially by achieving a passing score of 80% or higher. Students can engage in realistic patient simulations, receive real-time AI feedback, and review their performance in detail to master the art of clinical diagnosis.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,167 @@
+{
+  "skill": "Hypothesis Generation",
+  "description": "Systematically generating a complete and correctly ranked differential diagnosis list rather than jumping to one answer.",
+  "interactionType": "differential-ranking",
+  "drillLibrary": [
+    {
+      "id": "hg-mi",
+      "disease": "MI",
+      "scenario": "A 55-year-old male with hypertension and smoking history presents with sudden onset substernal chest pressure and diaphoresis.",
+      "findings": ["Substernal pressure", "Diaphoresis", "Hypertension", "Smoking history"],
+      "correctRanking": ["Myocardial Infarction", "Aortic Dissection", "Pulmonary Embolism", "Pneumothorax", "GERD"],
+      "commonMistakes": "Ranking GERD or Musculoskeletal pain too high; forgetting life-threatening differentials.",
+      "teachingPoint": "Always rank 'must-not-miss' life-threatening conditions (MI, Dissection, PE) at the top for acute chest pain."
+    },
+    {
+      "id": "hg-stroke",
+      "disease": "Stroke",
+      "scenario": "A 68-year-old female presents with sudden onset right-sided weakness and difficulty speaking.",
+      "findings": ["Sudden onset", "Right-sided weakness", "Aphasia"],
+      "correctRanking": ["Ischemic Stroke", "Intracerebral Hemorrhage", "Hypoglycemia", "Todd's Paralysis", "Complex Migraine"],
+      "commonMistakes": "Forgetting to check blood glucose; ignoring hemorrhagic stroke.",
+      "teachingPoint": "Focal neurological deficits must include both ischemic and hemorrhagic stroke, plus metabolic mimics like hypoglycemia."
+    },
+    {
+      "id": "hg-app",
+      "disease": "Appendicitis",
+      "scenario": "A 22-year-old female presents with 12 hours of periumbilical pain that has migrated to the RLQ, with nausea.",
+      "findings": ["Migratory pain", "RLQ tenderness", "Nausea", "Female of childbearing age"],
+      "correctRanking": ["Appendicitis", "Ectopic Pregnancy", "Ovarian Torsion", "Pelvic Inflammatory Disease", "Mesenteric Lymphadenitis"],
+      "commonMistakes": "Ignoring gynecological emergencies in females of childbearing age.",
+      "teachingPoint": "In females with RLQ pain, ectopic pregnancy must be ruled out alongside appendicitis."
+    },
+    {
+      "id": "hg-pe",
+      "disease": "PE",
+      "scenario": "A 40-year-old male presents with sudden shortness of breath and pleuritic chest pain after a long car trip.",
+      "findings": ["Sudden dyspnea", "Pleuritic pain", "Tachycardia", "Recent immobilization"],
+      "correctRanking": ["Pulmonary Embolism", "Pneumothorax", "Myocardial Infarction", "Pneumonia", "Pleurisy"],
+      "commonMistakes": "Ranking pneumonia too high without fever or cough; ignoring MI.",
+      "teachingPoint": "Sudden dyspnea with pleuritic pain and risk factors (immobilization) makes PE the primary hypothesis."
+    },
+    {
+      "id": "hg-pneu",
+      "disease": "Pneumonia",
+      "scenario": "A 70-year-old female presents with fever, productive cough, and new-onset confusion.",
+      "findings": ["Fever", "Productive cough", "Confusion", "Elderly"],
+      "correctRanking": ["Pneumonia", "Sepsis (source: UTI)", "Heart Failure", "Bronchitis", "Meningitis"],
+      "commonMistakes": "Ignoring sepsis as a systemic consequence; not considering HF in the elderly.",
+      "teachingPoint": "In the elderly, infection often presents with non-specific signs like confusion (delirium) alongside focal symptoms."
+    },
+    {
+      "id": "hg-men",
+      "disease": "Meningitis",
+      "scenario": "A 25-year-old male presents with severe headache, fever, and neck stiffness.",
+      "findings": ["Headache", "Fever", "Nuchal rigidity"],
+      "correctRanking": ["Meningitis", "Subarachnoid Hemorrhage", "Encephalitis", "Brain Abscess", "Migraine"],
+      "commonMistakes": "Ranking migraine too high; ignoring intracranial hemorrhage.",
+      "teachingPoint": "The combination of fever and meningismus requires immediate consideration of meningitis and SAH."
+    },
+    {
+      "id": "hg-dvt",
+      "disease": "DVT",
+      "scenario": "A 50-year-old female presents with unilateral calf swelling and pain after knee surgery.",
+      "findings": ["Unilateral swelling", "Calf pain", "Post-op status"],
+      "correctRanking": ["Deep Vein Thrombosis", "Cellulitis", "Ruptured Baker's Cyst", "Venous Insufficiency", "Muscle Strain"],
+      "commonMistakes": "Over-diagnosing cellulitis without clear skin breakdown or high fever.",
+      "teachingPoint": "Unilateral swelling in a post-op patient is DVT until proven otherwise."
+    },
+    {
+      "id": "hg-sepsis",
+      "disease": "Sepsis",
+      "scenario": "A 75-year-old male with a chronic indwelling catheter presents with hypotension, tachycardia, and lethargy.",
+      "findings": ["Hypotension", "Tachycardia", "Lethargy", "Indwelling catheter"],
+      "correctRanking": ["Urosepsis", "Dehydration", "Myocardial Infarction", "Pulmonary Embolism", "Adrenal Insufficiency"],
+      "commonMistakes": "Attributing hypotension solely to dehydration in an infected patient.",
+      "teachingPoint": "Hypotension in the setting of a potential infection source (catheter) must be treated as sepsis."
+    },
+    {
+      "id": "hg-dka",
+      "disease": "DKA",
+      "scenario": "A 14-year-old male presents with abdominal pain, vomiting, and deep breathing.",
+      "findings": ["Abdominal pain", "Vomiting", "Kussmaul breathing"],
+      "correctRanking": ["Diabetic Ketoacidosis", "Gastroenteritis", "Acute Appendicitis", "Toxic Ingestion", "Sepsis"],
+      "commonMistakes": "Focusing solely on the GI symptoms and missing the respiratory compensation for acidosis.",
+      "teachingPoint": "Vomiting and abdominal pain in a child with tachypnea should trigger a search for metabolic acidosis (DKA)."
+    },
+    {
+      "id": "hg-ana",
+      "disease": "Anaphylaxis",
+      "scenario": "A 30-year-old female presents with sudden onset hives, wheezing, and lightheadedness after a bee sting.",
+      "findings": ["Hives", "Wheezing", "Lightheadedness", "Bee sting"],
+      "correctRanking": ["Anaphylaxis", "Asthma Exacerbation", "Vasovagal Syncope", "Panic Attack", "Urticaria"],
+      "commonMistakes": "Ignoring the multi-system nature of the reaction; misdiagnosing as a simple panic attack.",
+      "teachingPoint": "Sudden multi-system symptoms (skin + respiratory + CV) after a known trigger is anaphylaxis."
+    },
+    {
+      "id": "hg-hf",
+      "disease": "Heart Failure",
+      "scenario": "A 70-year-old male with history of MI presents with worsening dyspnea and orthopnea.",
+      "findings": ["Dyspnea", "Orthopnea", "Prior MI history"],
+      "correctRanking": ["Heart Failure Exacerbation", "Pneumonia", "COPD Exacerbation", "Myocardial Infarction", "Pulmonary Embolism"],
+      "commonMistakes": "Missing a concurrent MI as the trigger for heart failure.",
+      "teachingPoint": "In patients with known heart disease, new dyspnea is most likely HF, but the trigger (e.g., MI) must also be sought."
+    },
+    {
+      "id": "hg-uti",
+      "disease": "UTI",
+      "scenario": "A 28-year-old female presents with dysuria, frequency, and suprapubic pain.",
+      "findings": ["Dysuria", "Frequency", "Suprapubic pain"],
+      "correctRanking": ["Cystitis (UTI)", "Pyelonephritis", "Urethritis (STI)", "Vaginitis", "Interstitial Cystitis"],
+      "commonMistakes": "Missing upper tract involvement (pyelonephritis) or STIs.",
+      "teachingPoint": "Lower urinary symptoms require differentiation between simple cystitis and more complex infections or STIs."
+    }
+  ],
+  "evaluationRubric": {
+    "correct": "Correct diagnosis is ranked #1; at least 3 'must-not-miss' items are in the top 5.",
+    "partiallyCorrect": "Correct diagnosis is in the top 3; at least 2 'must-not-miss' items are in the top 5.",
+    "wrong": "Correct diagnosis is not in the top 3; or 'must-not-miss' items are omitted.",
+    "scoringFormula": "Score = (RankWeight * CorrectPos) + (MustNotMissCount * 10)",
+    "commonErrors": [
+      { "error": "Premature closure (too few hypotheses)", "deduction": 15 },
+      { "error": "Missing life-threatening differential", "deduction": 20 }
+    ]
+  },
+  "progressionStages": [
+    {
+      "stage": 1,
+      "name": "Guided Recognition",
+      "scaffolding": "User is given a list of 10 possible diagnoses and must pick and rank 5.",
+      "interaction": "Drag and drop ranking.",
+      "passCriteria": "80% accuracy on 10 drills."
+    },
+    {
+      "stage": 2,
+      "name": "Unguided Application",
+      "scaffolding": "Free text entry for 5 hypotheses.",
+      "interaction": "Type and rank (auto-suggest enabled).",
+      "passCriteria": "85% accuracy on 12 drills."
+    },
+    {
+      "stage": 3,
+      "name": "Pressured Performance",
+      "scaffolding": "Free text + 30-second time limit.",
+      "interaction": "Type and rank (no suggestions).",
+      "passCriteria": "80% accuracy on 12 drills."
+    },
+    {
+      "stage": 4,
+      "name": "Expert Calibration",
+      "scaffolding": "Atypical/Complex cases + Confidence scoring.",
+      "interaction": "Free text + Confidence score (1-10).",
+      "passCriteria": "80% accuracy + Calibration score > 0.8."
+    }
+  ],
+  "adaptiveRules": {
+    "repeatThreshold": 75,
+    "increaseDifficulty": "3 consecutive scores > 90%",
+    "pullBack": "2 consecutive scores < 60%",
+    "prioritization": "Prioritize diseases where 'must-not-miss' items were omitted."
+  },
+  "masteryDefinition": {
+    "minScore": 90,
+    "speedBenchmark": "Average < 15 seconds to generate top 3",
+    "consistency": "100% inclusion of life-threatening differentials across all cases",
+    "calibration": "Confidence matches accuracy within 15% margin"
+  }
+}

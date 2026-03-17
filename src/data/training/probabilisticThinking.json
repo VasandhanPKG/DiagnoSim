@@ -1,0 +1,215 @@
+{
+  "skill": "Probabilistic Thinking",
+  "description": "Ranking diagnoses by actual likelihood based on patient demographics, epidemiology, and Bayesian updating as new information arrives — not treating all possibilities equally.",
+  "interactionType": "probability-assignment",
+  "drillLibrary": [
+    {
+      "id": "pt-mi",
+      "disease": "MI",
+      "scenario": "A patient presents with sudden onset substernal chest pressure.",
+      "demographics": [
+        { "id": "d1", "text": "22-year-old female, no PMH, regular exercise.", "correctProbabilities": { "MI": 1, "PE": 5, "Musculoskeletal": 94 } },
+        { "id": "d2", "text": "55-year-old male, smoker, HTN, family history of CAD.", "correctProbabilities": { "MI": 60, "PE": 10, "Musculoskeletal": 30 } },
+        { "id": "d3", "text": "80-year-old female, history of diabetes and prior MI.", "correctProbabilities": { "MI": 85, "PE": 5, "Musculoskeletal": 10 } }
+      ],
+      "diagnoses": ["MI", "PE", "Musculoskeletal"],
+      "commonMistakes": "Over-estimating MI risk in young, healthy patients; under-estimating MI risk in the elderly with non-specific symptoms.",
+      "teachingPoint": "Age and risk factors significantly shift the pre-test probability of MI from near-zero to the primary hypothesis."
+    },
+    {
+      "id": "pt-stroke",
+      "disease": "Stroke",
+      "scenario": "A patient presents with sudden onset right-sided weakness.",
+      "demographics": [
+        { "id": "d1", "text": "25-year-old female with history of complex migraines.", "correctProbabilities": { "Stroke": 5, "Migraine": 80, "Hypoglycemia": 15 } },
+        { "id": "d2", "text": "65-year-old male with atrial fibrillation and HTN.", "correctProbabilities": { "Stroke": 85, "Migraine": 5, "Hypoglycemia": 10 } },
+        { "id": "d3", "text": "45-year-old male, diabetic, missed breakfast.", "correctProbabilities": { "Stroke": 30, "Migraine": 10, "Hypoglycemia": 60 } }
+      ],
+      "diagnoses": ["Stroke", "Migraine", "Hypoglycemia"],
+      "commonMistakes": "Ignoring hypoglycemia in diabetics; over-diagnosing stroke in young migraineurs.",
+      "teachingPoint": "Atrial fibrillation is a massive multiplier for stroke probability, while diabetes shifts the focus toward metabolic mimics."
+    },
+    {
+      "id": "pt-app",
+      "disease": "Appendicitis",
+      "scenario": "A patient presents with right lower quadrant abdominal pain.",
+      "demographics": [
+        { "id": "d1", "text": "19-year-old male, previously healthy.", "correctProbabilities": { "Appendicitis": 80, "Nephrolithiasis": 10, "IBS": 10 } },
+        { "id": "d2", "text": "24-year-old female, sexually active, missed period.", "correctProbabilities": { "Appendicitis": 40, "Ectopic Pregnancy": 50, "PID": 10 } },
+        { "id": "d3", "text": "75-year-old female with history of diverticulosis.", "correctProbabilities": { "Appendicitis": 20, "Diverticulitis": 70, "Ischemic Colitis": 10 } }
+      ],
+      "diagnoses": ["Appendicitis", "Ectopic Pregnancy", "Diverticulitis"],
+      "commonMistakes": "Missing ectopic pregnancy in females; ignoring diverticulitis in the elderly.",
+      "teachingPoint": "RLQ pain in a young male is appendicitis until proven otherwise, but in a young female, ectopic pregnancy is equally likely."
+    },
+    {
+      "id": "pt-pe",
+      "disease": "PE",
+      "scenario": "A patient presents with sudden onset shortness of breath.",
+      "demographics": [
+        { "id": "d1", "text": "30-year-old female on oral contraceptives, recent long flight.", "correctProbabilities": { "PE": 70, "Asthma": 20, "Panic Attack": 10 } },
+        { "id": "d2", "text": "60-year-old male, smoker, history of COPD.", "correctProbabilities": { "PE": 20, "COPD Exacerbation": 70, "Pneumonia": 10 } },
+        { "id": "d3", "text": "45-year-old male, post-op day 3 from hip replacement.", "correctProbabilities": { "PE": 85, "Pneumonia": 10, "MI": 5 } }
+      ],
+      "diagnoses": ["PE", "COPD Exacerbation", "Asthma"],
+      "commonMistakes": "Under-estimating PE in COPD patients; over-diagnosing panic attacks in young women.",
+      "teachingPoint": "Provocative factors (OCPs, travel, surgery) dramatically increase the probability of PE."
+    },
+    {
+      "id": "pt-pneu",
+      "disease": "Pneumonia",
+      "scenario": "A patient presents with cough and fever.",
+      "demographics": [
+        { "id": "d1", "text": "20-year-old college student, living in a dorm.", "correctProbabilities": { "Pneumonia": 30, "Viral URI": 60, "Bronchitis": 10 } },
+        { "id": "d2", "text": "85-year-old nursing home resident with dementia.", "correctProbabilities": { "Pneumonia": 80, "UTI": 15, "HF": 5 } },
+        { "id": "d3", "text": "40-year-old male, smoker, history of asthma.", "correctProbabilities": { "Pneumonia": 40, "Asthma Exacerbation": 50, "Bronchitis": 10 } }
+      ],
+      "diagnoses": ["Pneumonia", "Viral URI", "Asthma Exacerbation"],
+      "commonMistakes": "Missing pneumonia in the elderly (who may only show confusion); over-diagnosing pneumonia in young adults with viral URIs.",
+      "teachingPoint": "Institutional living (nursing homes) is a major risk factor that shifts the probability toward pneumonia."
+    },
+    {
+      "id": "pt-men",
+      "disease": "Meningitis",
+      "scenario": "A patient presents with headache and fever.",
+      "demographics": [
+        { "id": "d1", "text": "19-year-old college student, not vaccinated for meningococcus.", "correctProbabilities": { "Meningitis": 60, "Migraine": 20, "Viral Syndrome": 20 } },
+        { "id": "d2", "text": "45-year-old female with history of chronic migraines.", "correctProbabilities": { "Meningitis": 5, "Migraine": 85, "Viral Syndrome": 10 } },
+        { "id": "d3", "text": "2-year-old child, incomplete vaccinations.", "correctProbabilities": { "Meningitis": 50, "Febrile Seizure": 30, "Otitis Media": 20 } }
+      ],
+      "diagnoses": ["Meningitis", "Migraine", "Viral Syndrome"],
+      "commonMistakes": "Ignoring meningitis in vaccinated patients (though risk is lower, it's not zero); over-diagnosing meningitis in migraineurs.",
+      "teachingPoint": "Vaccination status and age (extremes) are the primary drivers of meningitis probability."
+    },
+    {
+      "id": "pt-dvt",
+      "disease": "DVT",
+      "scenario": "A patient presents with unilateral leg swelling.",
+      "demographics": [
+        { "id": "d1", "text": "35-year-old male, active, no PMH.", "correctProbabilities": { "DVT": 5, "Muscle Strain": 85, "Cellulitis": 10 } },
+        { "id": "d2", "text": "60-year-old female, active cancer, recent chemotherapy.", "correctProbabilities": { "DVT": 80, "Cellulitis": 10, "Lymphedema": 10 } },
+        { "id": "d3", "text": "50-year-old male, post-op day 10 from knee surgery.", "correctProbabilities": { "DVT": 75, "Cellulitis": 15, "Baker's Cyst": 10 } }
+      ],
+      "diagnoses": ["DVT", "Muscle Strain", "Cellulitis"],
+      "commonMistakes": "Missing DVT in cancer patients; over-diagnosing DVT in young athletes with muscle strains.",
+      "teachingPoint": "Malignancy and recent surgery are the strongest predictors of DVT probability."
+    },
+    {
+      "id": "pt-sepsis",
+      "disease": "Sepsis",
+      "scenario": "A patient presents with hypotension and tachycardia.",
+      "demographics": [
+        { "id": "d1", "text": "20-year-old male, marathon runner, just finished a race.", "correctProbabilities": { "Sepsis": 1, "Dehydration": 94, "Heat Stroke": 5 } },
+        { "id": "d2", "text": "80-year-old female with indwelling catheter and fever.", "correctProbabilities": { "Sepsis": 90, "Dehydration": 5, "HF": 5 } },
+        { "id": "d3", "text": "45-year-old male, diabetic, with a large infected foot ulcer.", "correctProbabilities": { "Sepsis": 70, "Dehydration": 20, "MI": 10 } }
+      ],
+      "diagnoses": ["Sepsis", "Dehydration", "MI"],
+      "commonMistakes": "Attributing hypotension solely to dehydration in an elderly patient with a clear infection source.",
+      "teachingPoint": "The presence of an infection source (catheter/ulcer) in a vulnerable patient makes sepsis the overwhelmingly likely cause of shock."
+    },
+    {
+      "id": "pt-dka",
+      "disease": "DKA",
+      "scenario": "A patient presents with abdominal pain and vomiting.",
+      "demographics": [
+        { "id": "d1", "text": "12-year-old male, previously healthy, losing weight recently.", "correctProbabilities": { "DKA": 70, "Gastroenteritis": 20, "Appendicitis": 10 } },
+        { "id": "d2", "text": "25-year-old female with history of Type 1 DM, missed insulin.", "correctProbabilities": { "DKA": 95, "Gastroenteritis": 3, "Appendicitis": 2 } },
+        { "id": "d3", "text": "40-year-old male, history of alcohol abuse.", "correctProbabilities": { "DKA": 5, "Pancreatitis": 70, "Gastritis": 25 } }
+      ],
+      "diagnoses": ["DKA", "Gastroenteritis", "Pancreatitis"],
+      "commonMistakes": "Missing new-onset DKA in children (misdiagnosed as gastroenteritis); ignoring pancreatitis in alcoholics.",
+      "teachingPoint": "Weight loss in a child with GI symptoms is a massive red flag for new-onset Type 1 DM and DKA."
+    },
+    {
+      "id": "pt-ana",
+      "disease": "Anaphylaxis",
+      "scenario": "A patient presents with sudden wheezing and hives.",
+      "demographics": [
+        { "id": "d1", "text": "10-year-old boy with known peanut allergy, just ate a cookie.", "correctProbabilities": { "Anaphylaxis": 98, "Asthma": 1, "Panic Attack": 1 } },
+        { "id": "d2", "text": "30-year-old female with history of asthma, no known allergies.", "correctProbabilities": { "Anaphylaxis": 15, "Asthma Exacerbation": 80, "Panic Attack": 5 } },
+        { "id": "d3", "text": "50-year-old male, started new ACE inhibitor today.", "correctProbabilities": { "Anaphylaxis": 60, "Asthma": 10, "Angioedema (Isolated)": 30 } }
+      ],
+      "diagnoses": ["Anaphylaxis", "Asthma Exacerbation", "Panic Attack"],
+      "commonMistakes": "Ignoring anaphylaxis in patients without a known allergy history; misdiagnosing ACE-inhibitor angioedema as simple asthma.",
+      "teachingPoint": "A known trigger (peanuts) or a new medication (ACEi) dramatically shifts the probability toward anaphylaxis."
+    },
+    {
+      "id": "pt-hf",
+      "disease": "Heart Failure",
+      "scenario": "A patient presents with dyspnea and leg swelling.",
+      "demographics": [
+        { "id": "d1", "text": "75-year-old male with history of 3 prior MIs.", "correctProbabilities": { "HF": 90, "COPD": 5, "Pneumonia": 5 } },
+        { "id": "d2", "text": "60-year-old female, 50-pack-year smoker, history of COPD.", "correctProbabilities": { "HF": 30, "COPD Exacerbation": 60, "Pneumonia": 10 } },
+        { "id": "d3", "text": "40-year-old female, obese, recently started OCPs.", "correctProbabilities": { "HF": 10, "PE": 70, "Venous Insufficiency": 20 } }
+      ],
+      "diagnoses": ["HF", "COPD Exacerbation", "PE"],
+      "commonMistakes": "Missing HF in COPD patients (they often coexist); ignoring PE in young women with dyspnea and swelling.",
+      "teachingPoint": "Prior MI is the strongest predictor of HF probability, while smoking history favors COPD."
+    },
+    {
+      "id": "pt-uti",
+      "disease": "UTI",
+      "scenario": "A patient presents with dysuria and frequency.",
+      "demographics": [
+        { "id": "d1", "text": "25-year-old female, sexually active, new partner.", "correctProbabilities": { "UTI": 60, "STI": 35, "Vaginitis": 5 } },
+        { "id": "d2", "text": "80-year-old female with dementia and new confusion.", "correctProbabilities": { "UTI": 85, "Dehydration": 10, "Stroke": 5 } },
+        { "id": "d3", "text": "30-year-old male, no PMH.", "correctProbabilities": { "UTI": 10, "STI": 80, "Prostatitis": 10 } }
+      ],
+      "diagnoses": ["UTI", "STI", "Prostatitis"],
+      "commonMistakes": "Over-diagnosing UTI in young men (where STI is more likely); missing UTI as a cause of delirium in the elderly.",
+      "teachingPoint": "UTI is rare in young men and should prompt a search for STIs, while in the elderly, it's the primary cause of acute confusion."
+    }
+  ],
+  "evaluationRubric": {
+    "correct": "Assigned probabilities are within 10% of the correct values for all 3 demographics.",
+    "partiallyCorrect": "Assigned probabilities are within 20% of the correct values; or the 'most likely' diagnosis is correctly identified for all 3.",
+    "wrong": "Assigned probabilities are off by > 20%; or the 'most likely' diagnosis is incorrect.",
+    "scoringFormula": "Score = 100 - (AverageAbsoluteDifference * 2)",
+    "commonErrors": [
+      { "error": "Base rate neglect (ignoring epidemiology)", "deduction": 20 },
+      { "error": "Over-estimating rare conditions (Zebras)", "deduction": 15 }
+    ]
+  },
+  "progressionStages": [
+    {
+      "stage": 1,
+      "name": "Guided Recognition",
+      "scaffolding": "User is shown the 'Base Rate' for each diagnosis in the general population.",
+      "interaction": "Adjust sliders (hints visible).",
+      "passCriteria": "85% accuracy on 10 drills."
+    },
+    {
+      "stage": 2,
+      "name": "Unguided Application",
+      "scaffolding": "No base rate hints; raw demographics only.",
+      "interaction": "Adjust sliders (no hints).",
+      "passCriteria": "85% accuracy on 12 drills."
+    },
+    {
+      "stage": 3,
+      "name": "Pressured Performance",
+      "scaffolding": "Raw demographics + 20-second time limit per case.",
+      "interaction": "Adjust sliders under pressure.",
+      "passCriteria": "80% accuracy on 12 drills."
+    },
+    {
+      "stage": 4,
+      "name": "Expert Calibration",
+      "scaffolding": "Includes 'Bayesian Update' clues (e.g., 'Test X is positive') that shift the probabilities.",
+      "interaction": "Adjust sliders + Rate confidence.",
+      "passCriteria": "80% accuracy + Calibration score > 0.8."
+    }
+  ],
+  "adaptiveRules": {
+    "repeatThreshold": 70,
+    "increaseDifficulty": "3 consecutive scores > 90%",
+    "pullBack": "2 consecutive scores < 50%",
+    "prioritization": "Prioritize cases where the user significantly over-estimated a rare condition."
+  },
+  "masteryDefinition": {
+    "minScore": 95,
+    "speedBenchmark": "Average < 10 seconds to assign probabilities for 3 demographics",
+    "consistency": "Zero instances of 'Base Rate Neglect' in Stage 3",
+    "calibration": "Confidence matches accuracy within 10% margin"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "skill": "Bias Recognition",
+  "description": "Identifying and correcting your own cognitive errors during diagnosis including anchoring bias, confirmation bias, availability bias, premature closure, and framing bias.",
+  "interactionType": "bias-identification",
+  "drillLibrary": [
+    {
+      "id": "br-mi",
+      "disease": "MI",
+      "scenario": "A 55-year-old male presents with 'indigestion' and substernal pressure. The triage nurse notes 'probably just GERD' in the chart. You focus on the GI symptoms and order an antacid trial first.",
+      "biasTriggered": "Anchoring Bias",
+      "correctAnswer": "Anchoring Bias",
+      "commonMistakes": "Confirmation Bias (only looking for GI relief); Premature Closure (stopping after GERD is 'confirmed' by the antacid trial).",
+      "teachingPoint": "Anchoring on the initial triage note or a single symptom (indigestion) can lead to missing a life-threatening MI."
+    },
+    {
+      "id": "br-stroke",
+      "disease": "Stroke",
+      "scenario": "A 70-year-old female presents with sudden confusion. You just saw three patients with UTIs causing delirium this morning, so you immediately order a urinalysis and wait for the result before doing a neuro exam.",
+      "biasTriggered": "Availability Bias",
+      "correctAnswer": "Availability Bias",
+      "commonMistakes": "Premature Closure (assuming UTI without a neuro exam); Framing Bias (framing 'confusion' as 'delirium' rather than 'aphasia').",
+      "teachingPoint": "Availability bias occurs when you over-diagnose a condition simply because it's 'fresh' in your mind from recent cases."
+    },
+    {
+      "id": "br-app",
+      "disease": "Appendicitis",
+      "scenario": "A 20-year-old male with RLQ pain. You are convinced it's appendicitis. When the ultrasound is 'inconclusive', you decide it's just a 'poor quality study' and proceed to surgical consultation without considering other causes.",
+      "biasTriggered": "Confirmation Bias",
+      "correctAnswer": "Confirmation Bias",
+      "commonMistakes": "Anchoring Bias (anchoring on the first diagnosis); Premature Closure (ignoring the inconclusive test).",
+      "teachingPoint": "Confirmation bias leads you to ignore or discount evidence (like an inconclusive US) that doesn't fit your pre-conceived diagnosis."
+    },
+    {
+      "id": "br-pe",
+      "disease": "PE",
+      "scenario": "A 40-year-old female with sudden dyspnea. She is visibly anxious and crying. You diagnose her with a 'panic attack' and give her a sedative, noting her 'emotional state' as the primary cause of her shortness of breath.",
+      "biasTriggered": "Framing Bias",
+      "correctAnswer": "Framing Bias",
+      "commonMistakes": "Anchoring Bias (anchoring on the anxiety); Premature Closure (stopping after the sedative 'works' to calm her down).",
+      "teachingPoint": "Framing bias occurs when the patient's presentation (e.g., anxiety) frames the clinical picture in a way that masks the underlying pathology (PE)."
+    },
+    {
+      "id": "br-pneu",
+      "disease": "Pneumonia",
+      "scenario": "An 80-year-old male with a cough. You find a single crackle in the right base and immediately diagnose pneumonia. You don't check for JVD or edema, even though he has a history of heart failure.",
+      "biasTriggered": "Premature Closure",
+      "correctAnswer": "Premature Closure",
+      "commonMistakes": "Anchoring Bias (anchoring on the crackle); Confirmation Bias (only looking for pneumonia signs).",
+      "teachingPoint": "Premature closure is the tendency to stop the diagnostic process once a 'satisfactory' diagnosis is reached, missing concurrent or alternative conditions."
+    },
+    {
+      "id": "br-men",
+      "disease": "Meningitis",
+      "scenario": "A 22-year-old student with a headache. He's had migraines before. You assume this is 'just another migraine' and give him his usual triptan. You don't take his temperature or check for neck stiffness because 'he's a known migraineur'.",
+      "biasTriggered": "Anchoring Bias",
+      "correctAnswer": "Anchoring Bias",
+      "commonMistakes": "Confirmation Bias (only looking for migraine symptoms); Availability Bias (migraines are common in this patient).",
+      "teachingPoint": "Anchoring on a patient's chronic condition (migraine) can lead to missing a new, acute, and life-threatening condition (meningitis)."
+    },
+    {
+      "id": "br-dvt",
+      "disease": "DVT",
+      "scenario": "A 60-year-old male with leg swelling. You just read a paper about the 'over-diagnosis of DVT' and how 'cellulitis is often the real cause'. You diagnose him with cellulitis and start antibiotics without ordering an ultrasound.",
+      "biasTriggered": "Availability Bias",
+      "correctAnswer": "Availability Bias",
+      "commonMistakes": "Framing Bias (framing the swelling as 'redness'); Premature Closure (stopping after starting antibiotics).",
+      "teachingPoint": "Recent information (a paper or a lecture) can create an availability bias that shifts your diagnosis toward the 'newly learned' condition."
+    },
+    {
+      "id": "br-sepsis",
+      "disease": "Sepsis",
+      "scenario": "A 75-year-old with hypotension. You are told he's 'dehydrated' because he hasn't been drinking. You start fluids and wait. You don't check his lactate or look for an infection source because 'dehydration explains everything'.",
+      "biasTriggered": "Premature Closure",
+      "correctAnswer": "Premature Closure",
+      "commonMistakes": "Anchoring Bias (anchoring on 'dehydration'); Framing Bias (framing the hypotension as 'volume depletion').",
+      "teachingPoint": "Premature closure occurs when you accept the first plausible explanation (dehydration) and stop looking for more serious ones (sepsis)."
+    },
+    {
+      "id": "br-dka",
+      "disease": "DKA",
+      "scenario": "A 14-year-old with vomiting. There's a 'stomach bug' going around the school. You diagnose him with gastroenteritis and send him home with anti-emetics. You don't check his glucose or breathing pattern.",
+      "biasTriggered": "Availability Bias",
+      "correctAnswer": "Availability Bias",
+      "commonMistakes": "Anchoring Bias (anchoring on the 'stomach bug'); Premature Closure (stopping after the 'gastroenteritis' diagnosis).",
+      "teachingPoint": "Availability bias from a local 'outbreak' can lead to missing a serious metabolic emergency like DKA."
+    },
+    {
+      "id": "br-ana",
+      "disease": "Anaphylaxis",
+      "scenario": "A 30-year-old with wheezing. He has a history of asthma. You assume this is an 'asthma attack' and give him albuterol. You don't check his skin for hives or ask about recent food intake because 'he's an asthmatic'.",
+      "biasTriggered": "Anchoring Bias",
+      "correctAnswer": "Anchoring Bias",
+      "commonMistakes": "Confirmation Bias (only looking for wheezing); Premature Closure (stopping after the albuterol).",
+      "teachingPoint": "Anchoring on a known chronic condition (asthma) can blind you to a multi-system emergency like anaphylaxis."
+    },
+    {
+      "id": "br-hf",
+      "disease": "Heart Failure",
+      "scenario": "A 70-year-old with dyspnea. He's a heavy smoker. You assume this is a 'COPD exacerbation' and start steroids and nebulizers. You don't check his JVD or order a BNP because 'he's a smoker'.",
+      "biasTriggered": "Anchoring Bias",
+      "correctAnswer": "Anchoring Bias",
+      "commonMistakes": "Confirmation Bias (only looking for wheezing); Premature Closure (stopping after the COPD treatment).",
+      "teachingPoint": "Anchoring on a patient's risk factors (smoking) can lead to missing a cardiac cause for their symptoms (HF)."
+    },
+    {
+      "id": "br-uti",
+      "disease": "UTI",
+      "scenario": "A 30-year-old female with dysuria. She's 'very active' and has a 'new partner'. You assume this is an STI and start treatment. You don't order a urinalysis because 'the story fits an STI perfectly'.",
+      "biasTriggered": "Confirmation Bias",
+      "correctAnswer": "Confirmation Bias",
+      "commonMistakes": "Anchoring Bias (anchoring on the 'new partner'); Premature Closure (stopping after the STI diagnosis).",
+      "teachingPoint": "Confirmation bias leads you to only look for evidence that supports your 'perfect story' (STI) while ignoring other common possibilities (UTI)."
+    }
+  ],
+  "evaluationRubric": {
+    "correct": "Successfully identified the primary bias triggered by the case description.",
+    "partiallyCorrect": "Identified a secondary bias that was also present but not the primary one.",
+    "wrong": "Failed to identify any bias or chose an irrelevant one.",
+    "scoringFormula": "Score = (CorrectCount / TotalCount) * 100",
+    "commonErrors": [
+      { "error": "Misidentifying the bias type", "deduction": 20 },
+      { "error": "Failing to recognize that a bias occurred", "deduction": 50 }
+    ]
+  },
+  "progressionStages": [
+    {
+      "stage": 1,
+      "name": "Guided Recognition",
+      "scaffolding": "User is shown a list of 5 biases with their definitions before starting.",
+      "interaction": "Multiple choice (5 options).",
+      "passCriteria": "90% accuracy on 10 drills."
+    },
+    {
+      "stage": 2,
+      "name": "Unguided Application",
+      "scaffolding": "No bias definitions provided; raw cases only.",
+      "interaction": "Multiple choice (5 options).",
+      "passCriteria": "85% accuracy on 12 drills."
+    },
+    {
+      "stage": 3,
+      "name": "Pressured Performance",
+      "scaffolding": "Raw cases + 15-second time limit to identify the bias.",
+      "interaction": "Multiple choice (5 options) under pressure.",
+      "passCriteria": "80% accuracy on 12 drills."
+    },
+    {
+      "stage": 4,
+      "name": "Expert Calibration",
+      "scaffolding": "Includes 'Double Bias' cases where two biases are present.",
+      "interaction": "Select all that apply + Rate confidence.",
+      "passCriteria": "80% accuracy + Calibration score > 0.8."
+    }
+  ],
+  "adaptiveRules": {
+    "repeatThreshold": 75,
+    "increaseDifficulty": "3 consecutive scores > 90%",
+    "pullBack": "2 consecutive scores < 60%",
+    "prioritization": "Prioritize bias types where the user consistently fails (e.g., always missing Anchoring)."
+  },
+  "masteryDefinition": {
+    "minScore": 95,
+    "speedBenchmark": "Average < 5 seconds to identify bias",
+    "consistency": "100% accuracy in identifying the primary bias in Stage 3",
+    "calibration": "Confidence matches accuracy within 10% margin"
+  }
+}

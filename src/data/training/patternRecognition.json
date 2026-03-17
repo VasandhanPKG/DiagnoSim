@@ -1,0 +1,167 @@
+{
+  "skill": "Pattern Recognition",
+  "description": "Matching a cluster of confirmed symptoms to a known disease template without being told what disease it is.",
+  "interactionType": "identification",
+  "drillLibrary": [
+    {
+      "id": "pr-mi",
+      "disease": "MI",
+      "scenario": "A 58-year-old male with diabetes presents with sudden onset substernal pressure, diaphoresis, and nausea.",
+      "findings": ["Substernal pressure", "Diaphoresis", "Nausea", "Radiation to left jaw", "ST-segment elevation in II, III, aVF"],
+      "correctAnswer": "Myocardial Infarction",
+      "commonMistakes": "GERD, Pericarditis",
+      "teachingPoint": "The combination of pressure, diaphoresis, and jaw radiation in a diabetic is a classic 'textbook' pattern for MI."
+    },
+    {
+      "id": "pr-stroke",
+      "disease": "Stroke",
+      "scenario": "A 70-year-old female suddenly drops her coffee cup and cannot speak clearly; her right face is drooping.",
+      "findings": ["Sudden onset", "Right-sided facial droop", "Expressive aphasia", "Right arm weakness"],
+      "correctAnswer": "Stroke",
+      "commonMistakes": "Bell's Palsy, Hypoglycemia",
+      "teachingPoint": "Sudden focal neurological deficits (FAST) are the hallmark pattern of acute ischemic stroke."
+    },
+    {
+      "id": "pr-app",
+      "disease": "Appendicitis",
+      "scenario": "A 20-year-old male reports periumbilical pain that migrated to the right lower quadrant over 12 hours.",
+      "findings": ["Migratory pain", "Anorexia", "McBurney's point tenderness", "Rebound tenderness"],
+      "correctAnswer": "Appendicitis",
+      "commonMistakes": "Mesenteric Lymphadenitis, Nephrolithiasis",
+      "teachingPoint": "Migratory pain from umbilicus to RLQ combined with anorexia is the high-specificity pattern for appendicitis."
+    },
+    {
+      "id": "pr-pe",
+      "disease": "PE",
+      "scenario": "A 45-year-old woman presents with sudden pleuritic chest pain and shortness of breath 3 days after knee surgery.",
+      "findings": ["Sudden dyspnea", "Pleuritic chest pain", "Tachycardia", "Recent immobilization", "Unilateral leg swelling"],
+      "correctAnswer": "Pulmonary Embolism",
+      "commonMistakes": "Pneumonia, Pleurisy",
+      "teachingPoint": "The triad of sudden dyspnea, pleuritic pain, and a clear lung exam in a post-op patient is highly suggestive of PE."
+    },
+    {
+      "id": "pr-pneu",
+      "disease": "Pneumonia",
+      "scenario": "A 75-year-old male presents with productive cough, high fever, and focal crackles in the right lower lobe.",
+      "findings": ["Productive cough", "Fever/Chills", "Focal crackles", "Dullness to percussion", "Leukocytosis"],
+      "correctAnswer": "Pneumonia",
+      "commonMistakes": "Heart Failure, Bronchitis",
+      "teachingPoint": "Focal lung findings (crackles/dullness) combined with systemic inflammatory signs (fever/WBC) define the pneumonia pattern."
+    },
+    {
+      "id": "pr-men",
+      "disease": "Meningitis",
+      "scenario": "A 19-year-old college student presents with severe headache, stiff neck, and photophobia.",
+      "findings": ["Headache", "Nuchal rigidity", "Photophobia", "Fever", "Petechial rash"],
+      "correctAnswer": "Meningitis",
+      "commonMistakes": "Migraine, Subarachnoid Hemorrhage",
+      "teachingPoint": "The 'meningeal triad' of fever, neck stiffness, and altered mental status (or photophobia) is the core diagnostic pattern."
+    },
+    {
+      "id": "pr-dvt",
+      "disease": "DVT",
+      "scenario": "A 60-year-old male presents with unilateral calf swelling, redness, and warmth after a long-haul flight.",
+      "findings": ["Unilateral swelling", "Calf tenderness", "Pitting edema", "Recent travel history"],
+      "correctAnswer": "Deep Vein Thrombosis",
+      "commonMistakes": "Cellulitis, Ruptured Baker's Cyst",
+      "teachingPoint": "Unilateral leg swelling with a clear provocative history (travel/surgery) is the classic DVT pattern."
+    },
+    {
+      "id": "pr-sepsis",
+      "disease": "Sepsis",
+      "scenario": "An 80-year-old female with a UTI becomes confused, hypotensive, and tachypneic.",
+      "findings": ["Hypotension (MAP < 65)", "Altered mental status", "Tachypnea", "Fever", "Known infection source"],
+      "correctAnswer": "Sepsis",
+      "commonMistakes": "Dehydration, Heart Failure",
+      "teachingPoint": "Sepsis is recognized by the pattern of systemic organ dysfunction (qSOFA) in the setting of infection."
+    },
+    {
+      "id": "pr-dka",
+      "disease": "DKA",
+      "scenario": "A 15-year-old with Type 1 DM presents with abdominal pain, vomiting, and deep, rapid breathing.",
+      "findings": ["Abdominal pain", "Kussmaul respirations", "Fruity breath", "Polyuria/Polydipsia", "Hyperglycemia"],
+      "correctAnswer": "Diabetic Ketoacidosis",
+      "commonMistakes": "Gastroenteritis, Acute Abdomen",
+      "teachingPoint": "The combination of metabolic acidosis (Kussmaul) and hyperglycemia in a young patient is the DKA pattern."
+    },
+    {
+      "id": "pr-ana",
+      "disease": "Anaphylaxis",
+      "scenario": "A 25-year-old male develops hives, lip swelling, and wheezing minutes after eating a peanut cookie.",
+      "findings": ["Urticaria", "Angioedema", "Wheezing", "Hypotension", "Rapid onset after exposure"],
+      "correctAnswer": "Anaphylaxis",
+      "commonMistakes": "Asthma Exacerbation, Scombroid Poisoning",
+      "teachingPoint": "Multi-system involvement (skin + respiratory/CV) immediately following an allergen exposure is the anaphylaxis pattern."
+    },
+    {
+      "id": "pr-hf",
+      "disease": "Heart Failure",
+      "scenario": "A 65-year-old female presents with worsening dyspnea, orthopnea, and bilateral ankle edema.",
+      "findings": ["Orthopnea", "Paroxysmal Nocturnal Dyspnea", "JVD", "Bilateral crackles", "S3 gallop"],
+      "correctAnswer": "Heart Failure",
+      "commonMistakes": "COPD, Pneumonia",
+      "teachingPoint": "Volume overload signs (JVD/edema) plus pulmonary congestion (crackles/orthopnea) define the HF pattern."
+    },
+    {
+      "id": "pr-uti",
+      "disease": "UTI",
+      "scenario": "A 30-year-old female presents with frequency, urgency, and burning during urination.",
+      "findings": ["Dysuria", "Frequency", "Urgency", "Suprapubic pain", "Absence of vaginal discharge"],
+      "correctAnswer": "Urinary Tract Infection",
+      "commonMistakes": "Vaginitis, Interstitial Cystitis",
+      "teachingPoint": "The 'irritative voiding' triad of dysuria, frequency, and urgency in a young female is the primary UTI pattern."
+    }
+  ],
+  "evaluationRubric": {
+    "correct": "Exact match of the disease name (allowing for common abbreviations).",
+    "partiallyCorrect": "Naming the correct organ system or a very close differential (e.g., 'ACS' for MI).",
+    "wrong": "Incorrect disease or system entirely.",
+    "scoringFormula": "Score = (CorrectCount / TotalCount) * 100",
+    "commonErrors": [
+      { "error": "Premature closure", "deduction": 10 },
+      { "error": "Spelling/Nomenclature error", "deduction": 5 }
+    ]
+  },
+  "progressionStages": [
+    {
+      "stage": 1,
+      "name": "Guided Recognition",
+      "scaffolding": "Key findings are bolded and categorized (e.g., 'Cardiac', 'Respiratory').",
+      "interaction": "Free text entry with auto-complete hints.",
+      "passCriteria": "90% accuracy on 10 drills."
+    },
+    {
+      "stage": 2,
+      "name": "Unguided Application",
+      "scaffolding": "Raw scenario text only.",
+      "interaction": "Multiple choice (4 options).",
+      "passCriteria": "85% accuracy on 12 drills."
+    },
+    {
+      "stage": 3,
+      "name": "Pressured Performance",
+      "scaffolding": "Raw text + distracting noise findings.",
+      "interaction": "Multiple choice (6 options) + 15-second time limit.",
+      "passCriteria": "80% accuracy on 12 drills."
+    },
+    {
+      "stage": 4,
+      "name": "Expert Calibration",
+      "scaffolding": "Atypical presentations (e.g., painless MI).",
+      "interaction": "Free text + Confidence score (1-10).",
+      "passCriteria": "80% accuracy + Calibration score > 0.8."
+    }
+  ],
+  "adaptiveRules": {
+    "repeatThreshold": 70,
+    "increaseDifficulty": "3 consecutive scores > 90%",
+    "pullBack": "2 consecutive scores < 50%",
+    "prioritization": "Drills from failed disease categories appear 2x more frequently."
+  },
+  "masteryDefinition": {
+    "minScore": 95,
+    "speedBenchmark": "Average < 5 seconds per case",
+    "consistency": "100% accuracy across all 12 diseases in Stage 3",
+    "calibration": "Confidence matches accuracy within 10% margin"
+  }
+}

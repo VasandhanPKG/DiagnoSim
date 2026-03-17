@@ -1,0 +1,846 @@
+{
+  "diseases": [
+    {
+      "id": "d1",
+      "name": "Myocardial Infarction",
+      "system": "Cardiology",
+      "description": "Commonly known as a heart attack, it occurs when blood flow decreases or stops to a part of the heart, causing damage to the heart muscle.",
+      "symptoms": ["Chest pain", "Shortness of breath", "Nausea", "Cold sweat", "Fatigue"],
+      "causes": ["Coronary artery disease", "Blood clot", "Artery spasm"],
+      "diagnosis": ["ECG", "Blood tests (Troponin)", "Coronary angiography"],
+      "treatment": ["Aspirin", "Thrombolytics", "PCI (Stenting)", "CABG"],
+      "prevention": ["Healthy diet", "Regular exercise", "Smoking cessation", "Blood pressure control"]
+    },
+    {
+      "id": "d2",
+      "name": "Pneumonia",
+      "system": "Respiratory",
+      "description": "An infection that inflames the air sacs in one or both lungs, which may fill with fluid or pus.",
+      "symptoms": ["Cough with phlegm", "Fever", "Chills", "Difficulty breathing"],
+      "causes": ["Bacteria (Streptococcus pneumoniae)", "Viruses", "Fungi"],
+      "diagnosis": ["Chest X-ray", "Blood tests", "Sputum test"],
+      "treatment": ["Antibiotics", "Antivirals", "Cough medicine", "Fever reducers"],
+      "prevention": ["Vaccination", "Hand washing", "Not smoking"]
+    },
+    {
+      "id": "d3",
+      "name": "Diabetes Mellitus Type 2",
+      "system": "Endocrinology",
+      "description": "A long-term metabolic disorder that is characterized by high blood sugar, insulin resistance, and relative lack of insulin.",
+      "symptoms": ["Increased thirst", "Frequent urination", "Unexplained weight loss", "Blurred vision"],
+      "causes": ["Genetics", "Obesity", "Lack of physical activity"],
+      "diagnosis": ["HbA1c test", "Fasting plasma glucose test", "Oral glucose tolerance test"],
+      "treatment": ["Metformin", "Insulin therapy", "Dietary changes", "Exercise"],
+      "prevention": ["Maintaining healthy weight", "Active lifestyle", "Balanced diet"]
+    },
+    {
+      "id": "d4",
+      "name": "Hypertension",
+      "system": "Cardiology",
+      "description": "A long-term medical condition in which the blood pressure in the arteries is persistently elevated.",
+      "symptoms": ["Often asymptomatic", "Headaches", "Shortness of breath", "Nosebleeds"],
+      "causes": ["High salt intake", "Obesity", "Genetics", "Stress"],
+      "diagnosis": ["Sphygmomanometer readings", "Ambulatory BP monitoring"],
+      "treatment": ["ACE inhibitors", "Beta-blockers", "Diuretics", "Lifestyle changes"],
+      "prevention": ["Low sodium diet", "Regular exercise", "Limiting alcohol"]
+    },
+    {
+      "id": "d5",
+      "name": "Alzheimer's Disease",
+      "system": "Neurology",
+      "description": "A progressive neurologic disorder that causes the brain to shrink and brain cells to die, leading to memory loss and cognitive decline.",
+      "symptoms": ["Memory loss", "Confusion", "Difficulty with familiar tasks", "Personality changes"],
+      "causes": ["Amyloid plaques", "Tau tangles", "Genetic factors"],
+      "diagnosis": ["Cognitive tests", "MRI", "PET scan", "Neurological exam"],
+      "treatment": ["Cholinesterase inhibitors", "Memantine", "Supportive care"],
+      "prevention": ["Mental stimulation", "Physical exercise", "Heart-healthy diet"]
+    },
+    {
+      "id": "d6",
+      "name": "Multiple Sclerosis",
+      "system": "Neurology",
+      "description": "A potentially disabling disease of the brain and spinal cord where the immune system attacks the protective sheath (myelin) that covers nerve fibers.",
+      "symptoms": ["Numbness", "Vision problems", "Fatigue", "Walking difficulties"],
+      "causes": ["Autoimmune response", "Environmental factors", "Genetics"],
+      "diagnosis": ["MRI", "Lumbar puncture", "Evoked potential tests"],
+      "treatment": ["Corticosteroids", "Disease-modifying therapies", "Physical therapy"],
+      "prevention": ["No known prevention", "Vitamin D may play a role"]
+    },
+    {
+      "id": "d7",
+      "name": "Crohn's Disease",
+      "system": "Gastroenterology",
+      "description": "A type of inflammatory bowel disease (IBD) that causes inflammation of your digestive tract, which can lead to abdominal pain and severe diarrhea.",
+      "symptoms": ["Abdominal pain", "Diarrhea", "Weight loss", "Anemia", "Fatigue"],
+      "causes": ["Immune system malfunction", "Heredity", "Environmental triggers"],
+      "diagnosis": ["Colonoscopy", "CT scan", "MRI", "Blood tests"],
+      "treatment": ["Anti-inflammatory drugs", "Immunosuppressants", "Biologics", "Surgery"],
+      "prevention": ["No known prevention", "Stress management", "Dietary tracking"]
+    },
+    {
+      "id": "d8",
+      "name": "Systemic Lupus Erythematosus",
+      "system": "Immunology",
+      "description": "An autoimmune disease in which the immune system attacks its own tissues, causing widespread inflammation and tissue damage in the affected organs.",
+      "symptoms": ["Butterfly rash", "Joint pain", "Fever", "Photosensitivity", "Kidney problems"],
+      "causes": ["Genetics", "Hormones", "Environmental triggers (UV light, infections)"],
+      "diagnosis": ["ANA test", "Anti-dsDNA", "C3/C4 levels", "Urinalysis"],
+      "treatment": ["Hydroxychloroquine", "Corticosteroids", "Immunosuppressants"],
+      "prevention": ["Avoiding UV exposure", "Stress reduction", "Infection prevention"]
+    },
+    {
+      "id": "d9",
+      "name": "Huntington's Disease",
+      "system": "Neurology",
+      "description": "A rare, inherited disease that causes the progressive breakdown (degeneration) of nerve cells in the brain.",
+      "symptoms": ["Involuntary movements (chorea)", "Cognitive decline", "Psychiatric disorders"],
+      "causes": ["Autosomal dominant mutation in the HTT gene"],
+      "diagnosis": ["Genetic testing", "Neurological exam", "Brain imaging (MRI/CT)"],
+      "treatment": ["Tetrabenazine", "Antipsychotics", "Physical/Speech therapy"],
+      "prevention": ["Genetic counseling", "Pre-implantation genetic diagnosis"]
+    },
+    {
+      "id": "d10",
+      "name": "Wilson's Disease",
+      "system": "Gastroenterology",
+      "description": "A rare genetic disorder that causes copper to accumulate in your liver, brain, and other vital organs.",
+      "symptoms": ["Kayser-Fleischer rings", "Jaundice", "Tremors", "Difficulty speaking"],
+      "causes": ["Mutation in the ATP7B gene (autosomal recessive)"],
+      "diagnosis": ["Ceruloplasmin levels", "24-hour urine copper", "Liver biopsy"],
+      "treatment": ["Chelating agents (Penicillamine)", "Zinc supplements", "Low-copper diet"],
+      "prevention": ["Genetic screening for siblings of affected individuals"]
+    },
+    {
+      "id": "d11",
+      "name": "Pheochromocytoma",
+      "system": "Endocrinology",
+      "description": "A rare, usually noncancerous (benign) tumor that develops in an adrenal gland.",
+      "symptoms": ["Severe headaches", "Palpitations", "Excessive sweating", "High blood pressure"],
+      "causes": ["Tumor of chromaffin cells in the adrenal medulla"],
+      "diagnosis": ["Plasma/Urine metanephrines", "CT/MRI of abdomen", "MIBG scan"],
+      "treatment": ["Alpha-blockers", "Beta-blockers", "Surgical removal of tumor"],
+      "prevention": ["No known prevention", "Genetic screening for familial syndromes (MEN2)"]
+    },
+    {
+      "id": "d12",
+      "name": "Guillain-Barré Syndrome",
+      "system": "Neurology",
+      "description": "A rare disorder in which your body's immune system attacks your nerves, often preceded by an infectious illness.",
+      "symptoms": ["Prickling sensations", "Weakness starting in legs", "Unsteady walking", "Paralysis"],
+      "causes": ["Post-infectious autoimmune response (e.g., Campylobacter jejuni)"],
+      "diagnosis": ["Spinal tap (high protein, normal cells)", "EMG", "Nerve conduction studies"],
+      "treatment": ["Plasmapheresis", "Intravenous immunoglobulin (IVIG)", "Physical therapy"],
+      "prevention": ["Prompt treatment of infections", "Hand hygiene"]
+    },
+    {
+      "id": "d13",
+      "name": "Cystic Fibrosis",
+      "system": "Respiratory",
+      "description": "An inherited life-threatening disorder that damages the lungs and digestive system.",
+      "symptoms": ["Salty-tasting skin", "Persistent cough", "Frequent lung infections", "Poor growth"],
+      "causes": ["Mutation in the CFTR gene (autosomal recessive)"],
+      "diagnosis": ["Sweat chloride test", "Newborn screening", "Genetic testing"],
+      "treatment": ["Chest physiotherapy", "Inhaled antibiotics", "CFTR modulators", "Lung transplant"],
+      "prevention": ["Carrier screening", "Genetic counseling"]
+    },
+    {
+      "id": "d14",
+      "name": "Amyotrophic Lateral Sclerosis (ALS)",
+      "system": "Neurology",
+      "description": "A progressive nervous system disease that affects nerve cells in the brain and spinal cord, causing loss of muscle control.",
+      "symptoms": ["Muscle weakness", "Slurred speech", "Difficulty swallowing", "Muscle cramps"],
+      "causes": ["Mostly sporadic", "5-10% familial (SOD1, C9orf72 mutations)"],
+      "diagnosis": ["EMG", "Nerve conduction studies", "MRI", "Blood/Urine tests"],
+      "treatment": ["Riluzole", "Edaravone", "Breathing support", "Physical therapy"],
+      "prevention": ["No known prevention"]
+    },
+    {
+      "id": "d15",
+      "name": "Kawasaki Disease",
+      "system": "Cardiology",
+      "description": "A condition that causes inflammation in the walls of some blood vessels in the body, primarily affecting children.",
+      "symptoms": ["High fever", "Strawberry tongue", "Red eyes", "Swollen lymph nodes", "Peeling skin"],
+      "causes": ["Unknown", "Likely an abnormal immune response to an infection"],
+      "diagnosis": ["Clinical criteria", "Echocardiogram", "Blood tests (ESR/CRP)"],
+      "treatment": ["Intravenous immunoglobulin (IVIG)", "High-dose aspirin"],
+      "prevention": ["No known prevention", "Early treatment prevents heart complications"]
+    },
+    {
+      "id": "d16",
+      "name": "Asthma",
+      "system": "Respiratory",
+      "description": "A condition in which your airways narrow and swell and may produce extra mucus, making breathing difficult.",
+      "symptoms": ["Shortness of breath", "Chest tightness", "Wheezing", "Coughing"],
+      "causes": ["Airborne allergens", "Respiratory infections", "Physical activity", "Cold air"],
+      "diagnosis": ["Spirometry", "Peak flow test", "FeNO test"],
+      "treatment": ["Inhaled corticosteroids", "Short-acting beta agonists", "Leukotriene modifiers"],
+      "prevention": ["Identifying triggers", "Vaccination", "Monitoring breathing"]
+    },
+    {
+      "id": "d17",
+      "name": "Rheumatoid Arthritis",
+      "system": "Immunology",
+      "description": "A chronic inflammatory disorder that can affect more than just your joints, including skin, eyes, lungs, and heart.",
+      "symptoms": ["Tender, warm, swollen joints", "Joint stiffness", "Fatigue", "Fever", "Loss of appetite"],
+      "causes": ["Autoimmune response", "Genetics", "Environmental factors"],
+      "diagnosis": ["Blood tests (RF, anti-CCP)", "X-rays", "MRI", "Ultrasound"],
+      "treatment": ["DMARDs", "Biologics", "NSAIDs", "Corticosteroids"],
+      "prevention": ["No known prevention", "Early diagnosis is key"]
+    },
+    {
+      "id": "d18",
+      "name": "Parkinson's Disease",
+      "system": "Neurology",
+      "description": "A progressive disorder that affects the nervous system and the parts of the body controlled by the nerves.",
+      "symptoms": ["Tremor", "Slowed movement (bradykinesia)", "Rigid muscles", "Impaired posture"],
+      "causes": ["Genetics", "Environmental triggers", "Presence of Lewy bodies"],
+      "diagnosis": ["Neurological exam", "DaTscan", "Response to medication"],
+      "treatment": ["Levodopa", "Dopamine agonists", "MAO B inhibitors", "Deep brain stimulation"],
+      "prevention": ["Regular aerobic exercise", "Healthy diet"]
+    },
+    {
+      "id": "d19",
+      "name": "Chronic Kidney Disease",
+      "system": "Endocrinology",
+      "description": "Also called chronic kidney failure, involves a gradual loss of kidney function over time.",
+      "symptoms": ["Nausea", "Vomiting", "Loss of appetite", "Fatigue", "Changes in urination"],
+      "causes": ["Diabetes", "High blood pressure", "Glomerulonephritis"],
+      "diagnosis": ["Blood tests (eGFR)", "Urine tests", "Imaging (Ultrasound)", "Kidney biopsy"],
+      "treatment": ["Blood pressure medication", "Cholesterol medication", "Anemia treatment", "Dialysis", "Kidney transplant"],
+      "prevention": ["Managing diabetes", "Controlling blood pressure", "Maintaining healthy weight"]
+    },
+    {
+      "id": "d20",
+      "name": "Gastroesophageal Reflux Disease (GERD)",
+      "system": "Gastroenterology",
+      "description": "Occurs when stomach acid frequently flows back into the tube connecting your mouth and stomach (esophagus).",
+      "symptoms": ["Heartburn", "Chest pain", "Difficulty swallowing", "Regurgitation"],
+      "causes": ["Weak lower esophageal sphincter", "Hiatal hernia", "Obesity", "Smoking"],
+      "diagnosis": ["Upper endoscopy", "Ambulatory acid (pH) probe test", "Esophageal manometry"],
+      "treatment": ["Antacids", "H2 blockers", "Proton pump inhibitors", "Surgery"],
+      "prevention": ["Maintaining healthy weight", "Avoiding trigger foods", "Eating smaller meals"]
+    }
+  ],
+  "drugs": [
+    {
+      "id": "m1",
+      "name": "Atorvastatin",
+      "category": "Statins",
+      "use": "Used to lower cholesterol and reduce the risk of heart disease.",
+      "dosage": "10-80 mg once daily",
+      "sideEffects": ["Muscle pain", "Diarrhea", "Nausea"],
+      "contraindications": ["Active liver disease", "Pregnancy"],
+      "interactions": ["Grapefruit juice", "Cyclosporine", "Clarithromycin"]
+    },
+    {
+      "id": "m2",
+      "name": "Metformin",
+      "category": "Antidiabetics",
+      "use": "First-line medication for the treatment of type 2 diabetes.",
+      "dosage": "500-2000 mg daily in divided doses",
+      "sideEffects": ["Nausea", "Abdominal pain", "Metallic taste"],
+      "contraindications": ["Severe renal impairment", "Metabolic acidosis"],
+      "interactions": ["Alcohol", "Iodinated contrast", "Cimetidine"]
+    },
+    {
+      "id": "m3",
+      "name": "Amoxicillin",
+      "category": "Antibiotics",
+      "use": "Treatment of various bacterial infections such as pneumonia and strep throat.",
+      "dosage": "250-500 mg every 8 hours",
+      "sideEffects": ["Nausea", "Rash", "Diarrhea"],
+      "contraindications": ["Penicillin allergy"],
+      "interactions": ["Oral contraceptives", "Allopurinol"]
+    },
+    {
+      "id": "m4",
+      "name": "Lisinopril",
+      "category": "Antihypertensives",
+      "use": "Treatment of high blood pressure and heart failure.",
+      "dosage": "10-40 mg once daily",
+      "sideEffects": ["Dry cough", "Dizziness", "Headache"],
+      "contraindications": ["History of angioedema", "Pregnancy"],
+      "interactions": ["Potassium supplements", "NSAIDs", "Lithium"]
+    },
+    {
+      "id": "m5",
+      "name": "Amlodipine",
+      "category": "Antihypertensives",
+      "use": "Treatment of high blood pressure and chest pain (angina).",
+      "dosage": "5-10 mg once daily",
+      "sideEffects": ["Swelling of ankles", "Fatigue", "Palpitations"],
+      "contraindications": ["Severe hypotension"],
+      "interactions": ["Simvastatin", "Cyclosporine"]
+    },
+    {
+      "id": "m6",
+      "name": "Levothyroxine",
+      "category": "Hormones",
+      "use": "Treatment of hypothyroidism.",
+      "dosage": "25-200 mcg once daily on empty stomach",
+      "sideEffects": ["Palpitations", "Insomnia", "Weight loss"],
+      "contraindications": ["Untreated adrenal insufficiency", "Acute MI"],
+      "interactions": ["Calcium carbonate", "Iron supplements", "Warfarin"]
+    },
+    {
+      "id": "m7",
+      "name": "Albuterol",
+      "category": "Bronchodilators",
+      "use": "Relief of bronchospasm in asthma and COPD.",
+      "dosage": "1-2 puffs every 4-6 hours as needed",
+      "sideEffects": ["Tremors", "Tachycardia", "Nervousness"],
+      "contraindications": ["Hypersensitivity"],
+      "interactions": ["Beta-blockers", "Digoxin"]
+    },
+    {
+      "id": "m8",
+      "name": "Omeprazole",
+      "category": "Gastrointestinal",
+      "use": "Treatment of GERD and stomach ulcers.",
+      "dosage": "20-40 mg once daily",
+      "sideEffects": ["Headache", "Abdominal pain", "Nausea"],
+      "contraindications": ["Hypersensitivity"],
+      "interactions": ["Clopidogrel", "Warfarin", "Methotrexate"]
+    },
+    {
+      "id": "m9",
+      "name": "Losartan",
+      "category": "Antihypertensives",
+      "use": "Treatment of hypertension and diabetic nephropathy.",
+      "dosage": "25-100 mg once daily",
+      "sideEffects": ["Dizziness", "Back pain", "Hyperkalemia"],
+      "contraindications": ["Pregnancy"],
+      "interactions": ["Lithium", "Potassium-sparing diuretics"]
+    },
+    {
+      "id": "m10",
+      "name": "Gabapentin",
+      "category": "Anticonvulsants",
+      "use": "Treatment of nerve pain and seizures.",
+      "dosage": "300-1200 mg three times daily",
+      "sideEffects": ["Drowsiness", "Dizziness", "Peripheral edema"],
+      "contraindications": ["Hypersensitivity"],
+      "interactions": ["Antacids", "Morphine"]
+    },
+    {
+      "id": "m11",
+      "name": "Sertraline",
+      "category": "Antidepressants",
+      "use": "Treatment of depression, OCD, and panic disorder.",
+      "dosage": "50-200 mg once daily",
+      "sideEffects": ["Nausea", "Insomnia", "Sexual dysfunction"],
+      "contraindications": ["MAOI use within 14 days"],
+      "interactions": ["NSAIDs", "Warfarin", "St. John's Wort"]
+    },
+    {
+      "id": "m12",
+      "name": "Furosemide",
+      "category": "Diuretics",
+      "use": "Treatment of edema and hypertension.",
+      "dosage": "20-80 mg once or twice daily",
+      "sideEffects": ["Dehydration", "Hypokalemia", "Dizziness"],
+      "contraindications": ["Anuria", "Severe electrolyte depletion"],
+      "interactions": ["Aminoglycosides", "Digoxin", "Lithium"]
+    },
+    {
+      "id": "m13",
+      "name": "Warfarin",
+      "category": "Anticoagulants",
+      "use": "Prevention of blood clots.",
+      "dosage": "2-10 mg daily adjusted by INR",
+      "sideEffects": ["Bleeding", "Bruising"],
+      "contraindications": ["Active bleeding", "Pregnancy"],
+      "interactions": ["Vitamin K", "Antibiotics", "NSAIDs"]
+    },
+    {
+      "id": "m14",
+      "name": "Ibuprofen",
+      "category": "Analgesics",
+      "use": "Relief of pain and inflammation.",
+      "dosage": "200-800 mg every 4-6 hours",
+      "sideEffects": ["Stomach upset", "GI bleeding", "Kidney issues"],
+      "contraindications": ["Peptic ulcer", "Severe renal failure"],
+      "interactions": ["Aspirin", "ACE inhibitors", "Anticoagulants"]
+    },
+    {
+      "id": "m15",
+      "name": "Hydrochlorothiazide",
+      "category": "Diuretics",
+      "use": "Treatment of hypertension and edema.",
+      "dosage": "12.5-50 mg once daily",
+      "sideEffects": ["Dizziness", "Photosensitivity", "Electrolyte imbalance"],
+      "contraindications": ["Anuria", "Sulfonamide allergy"],
+      "interactions": ["Lithium", "Digoxin", "Antidiabetics"]
+    },
+    {
+      "id": "m16",
+      "name": "Prednisone",
+      "category": "Corticosteroids",
+      "use": "Treatment of inflammatory and autoimmune conditions.",
+      "dosage": "5-60 mg daily",
+      "sideEffects": ["Increased appetite", "Insomnia", "Fluid retention"],
+      "contraindications": ["Systemic fungal infections"],
+      "interactions": ["NSAIDs", "Vaccines", "Antidiabetics"]
+    },
+    {
+      "id": "m17",
+      "name": "Clopidogrel",
+      "category": "Antiplatelets",
+      "use": "Prevention of stroke and heart attack.",
+      "dosage": "75 mg once daily",
+      "sideEffects": ["Bleeding", "Bruising", "Itching"],
+      "contraindications": ["Active pathological bleeding"],
+      "interactions": ["Omeprazole", "NSAIDs", "Warfarin"]
+    },
+    {
+      "id": "m18",
+      "name": "Metoprolol",
+      "category": "Antihypertensives",
+      "use": "Treatment of high blood pressure, chest pain, and heart failure.",
+      "dosage": "25-100 mg once or twice daily",
+      "sideEffects": ["Dizziness", "Fatigue", "Slow heart rate"],
+      "contraindications": ["Severe bradycardia", "Heart block"],
+      "interactions": ["Digoxin", "Clonidine", "Diltiazem"]
+    },
+    {
+      "id": "m19",
+      "name": "Azithromycin",
+      "category": "Antibiotics",
+      "use": "Treatment of various bacterial infections.",
+      "dosage": "500 mg on day 1, then 250 mg daily for 4 days",
+      "sideEffects": ["Diarrhea", "Nausea", "Abdominal pain"],
+      "contraindications": ["History of cholestatic jaundice"],
+      "interactions": ["Antacids", "Warfarin", "Digoxin"]
+    },
+    {
+      "id": "m20",
+      "name": "Simvastatin",
+      "category": "Statins",
+      "use": "Used to lower cholesterol and triglycerides.",
+      "dosage": "10-40 mg once daily in the evening",
+      "sideEffects": ["Muscle pain", "Upper respiratory infection"],
+      "contraindications": ["Active liver disease", "Pregnancy"],
+      "interactions": ["Amlodipine", "Grapefruit juice", "Gemfibrozil"]
+    },
+    {
+      "id": "m21",
+      "name": "Pantoprazole",
+      "category": "Gastrointestinal",
+      "use": "Treatment of erosive esophagitis and GERD.",
+      "dosage": "40 mg once daily",
+      "sideEffects": ["Headache", "Diarrhea", "Flatulence"],
+      "contraindications": ["Hypersensitivity"],
+      "interactions": ["Methotrexate", "Warfarin"]
+    },
+    {
+      "id": "m22",
+      "name": "Escitalopram",
+      "category": "Antidepressants",
+      "use": "Treatment of depression and generalized anxiety disorder.",
+      "dosage": "10-20 mg once daily",
+      "sideEffects": ["Nausea", "Sleepiness", "Increased sweating"],
+      "contraindications": ["MAOI use", "Pimozide"],
+      "interactions": ["Aspirin", "NSAIDs", "Lithium"]
+    },
+    {
+      "id": "m23",
+      "name": "Montelukast",
+      "category": "Respiratory",
+      "use": "Prevention and chronic treatment of asthma.",
+      "dosage": "10 mg once daily in the evening",
+      "sideEffects": ["Upper respiratory infection", "Fever", "Headache"],
+      "contraindications": ["Hypersensitivity"],
+      "interactions": ["Phenobarbital", "Rifampin"]
+    },
+    {
+      "id": "m24",
+      "name": "Rosuvastatin",
+      "category": "Statins",
+      "use": "Used to lower cholesterol and reduce the risk of stroke and heart attack.",
+      "dosage": "5-40 mg once daily",
+      "sideEffects": ["Headache", "Muscle pain", "Weakness"],
+      "contraindications": ["Liver disease", "Pregnancy"],
+      "interactions": ["Cyclosporine", "Warfarin", "Antacids"]
+    },
+    {
+      "id": "m25",
+      "name": "Bupropion",
+      "category": "Antidepressants",
+      "use": "Treatment of major depressive disorder and smoking cessation.",
+      "dosage": "150-300 mg daily",
+      "sideEffects": ["Dry mouth", "Insomnia", "Dizziness"],
+      "contraindications": ["Seizure disorder", "Eating disorders"],
+      "interactions": ["MAOIs", "Levodopa", "Theophylline"]
+    },
+    {
+      "id": "m26",
+      "name": "Duloxetine",
+      "category": "Antidepressants",
+      "use": "Treatment of depression, anxiety, and diabetic peripheral neuropathy.",
+      "dosage": "30-60 mg once daily",
+      "sideEffects": ["Nausea", "Dry mouth", "Somnolence"],
+      "contraindications": ["Uncontrolled narrow-angle glaucoma"],
+      "interactions": ["NSAIDs", "Warfarin", "Ciprofloxacin"]
+    },
+    {
+      "id": "m27",
+      "name": "Venlafaxine",
+      "category": "Antidepressants",
+      "use": "Treatment of depression, anxiety, and panic disorder.",
+      "dosage": "75-225 mg daily",
+      "sideEffects": ["Nausea", "Dry mouth", "Sweating"],
+      "contraindications": ["MAOI use"],
+      "interactions": ["NSAIDs", "Warfarin", "Haloperidol"]
+    },
+    {
+      "id": "m28",
+      "name": "Ranitidine",
+      "category": "Gastrointestinal",
+      "use": "Treatment of ulcers and GERD.",
+      "dosage": "150 mg twice daily",
+      "sideEffects": ["Headache", "Constipation", "Diarrhea"],
+      "contraindications": ["Hypersensitivity"],
+      "interactions": ["Warfarin", "Procainamide"]
+    },
+    {
+      "id": "m29",
+      "name": "Ciprofloxacin",
+      "category": "Antibiotics",
+      "use": "Treatment of various bacterial infections.",
+      "dosage": "250-750 mg every 12 hours",
+      "sideEffects": ["Nausea", "Diarrhea", "Tendon rupture risk"],
+      "contraindications": ["Tizanidine use"],
+      "interactions": ["Theophylline", "Warfarin", "Antacids"]
+    },
+    {
+      "id": "m30",
+      "name": "Cephalexin",
+      "category": "Antibiotics",
+      "use": "Treatment of skin, respiratory, and urinary tract infections.",
+      "dosage": "250-500 mg every 6 hours",
+      "sideEffects": ["Diarrhea", "Nausea", "Vomiting"],
+      "contraindications": ["Cephalosporin allergy"],
+      "interactions": ["Metformin", "Probenecid"]
+    },
+    {
+      "id": "m31",
+      "name": "Doxycycline",
+      "category": "Antibiotics",
+      "use": "Treatment of various bacterial infections and acne.",
+      "dosage": "100 mg every 12 hours",
+      "sideEffects": ["Photosensitivity", "Nausea", "Vomiting"],
+      "contraindications": ["Pregnancy", "Children under 8"],
+      "interactions": ["Antacids", "Iron", "Warfarin"]
+    },
+    {
+      "id": "m32",
+      "name": "Fluconazole",
+      "category": "Antifungals",
+      "use": "Treatment of fungal infections.",
+      "dosage": "150 mg single dose for vaginal candidiasis",
+      "sideEffects": ["Headache", "Nausea", "Abdominal pain"],
+      "contraindications": ["Coadministration with terfenadine"],
+      "interactions": ["Warfarin", "Phenytoin", "Cyclosporine"]
+    },
+    {
+      "id": "m33",
+      "name": "Ondansetron",
+      "category": "Antiemetics",
+      "use": "Prevention of nausea and vomiting caused by chemotherapy or surgery.",
+      "dosage": "4-8 mg as needed",
+      "sideEffects": ["Headache", "Constipation", "Fatigue"],
+      "contraindications": ["Apomorphine use"],
+      "interactions": ["Phenytoin", "Carbamazepine", "Rifampin"]
+    },
+    {
+      "id": "m34",
+      "name": "Spironolactone",
+      "category": "Diuretics",
+      "use": "Treatment of heart failure, hypertension, and edema.",
+      "dosage": "25-100 mg daily",
+      "sideEffects": ["Hyperkalemia", "Gynecomastia", "Dizziness"],
+      "contraindications": ["Anuria", "Acute renal insufficiency"],
+      "interactions": ["ACE inhibitors", "Lithium", "Digoxin"]
+    },
+    {
+      "id": "m35",
+      "name": "Digoxin",
+      "category": "Cardiovascular",
+      "use": "Treatment of heart failure and atrial fibrillation.",
+      "dosage": "0.125-0.25 mg once daily",
+      "sideEffects": ["Nausea", "Visual disturbances", "Dizziness"],
+      "contraindications": ["Ventricular fibrillation"],
+      "interactions": ["Diuretics", "Amiodarone", "Verapamil"]
+    },
+    {
+      "id": "m36",
+      "name": "Insulin Glargine",
+      "category": "Antidiabetics",
+      "use": "Long-acting insulin used to improve blood sugar control in adults and children with diabetes mellitus.",
+      "dosage": "Individualized; usually once daily at the same time",
+      "sideEffects": ["Hypoglycemia", "Injection site reactions", "Weight gain"],
+      "contraindications": ["Hypoglycemia episodes", "Hypersensitivity"],
+      "interactions": ["Alcohol", "Beta-blockers", "Corticosteroids"]
+    },
+    {
+      "id": "m37",
+      "name": "Amoxicillin/Clavulanate",
+      "category": "Antibiotics",
+      "use": "Treatment of infections caused by bacteria, such as sinusitis, pneumonia, and ear infections.",
+      "dosage": "500/125 mg to 875/125 mg twice daily",
+      "sideEffects": ["Diarrhea", "Nausea", "Vomiting", "Rash"],
+      "contraindications": ["Penicillin allergy", "History of cholestatic jaundice"],
+      "interactions": ["Allopurinol", "Oral contraceptives", "Warfarin"]
+    },
+    {
+      "id": "m38",
+      "name": "Diazepam",
+      "category": "Anxiolytics",
+      "use": "Treatment of anxiety, muscle spasms, and alcohol withdrawal.",
+      "dosage": "2-10 mg 2-4 times daily",
+      "sideEffects": ["Drowsiness", "Fatigue", "Muscle weakness", "Ataxia"],
+      "contraindications": ["Myasthenia gravis", "Severe respiratory insufficiency", "Sleep apnea"],
+      "interactions": ["Alcohol", "Opioids", "Cimetidine"]
+    },
+    {
+      "id": "m39",
+      "name": "Fluoxetine",
+      "category": "Antidepressants",
+      "use": "Treatment of major depressive disorder, OCD, and bulimia nervosa.",
+      "dosage": "20-60 mg once daily",
+      "sideEffects": ["Nausea", "Insomnia", "Anxiety", "Sexual dysfunction"],
+      "contraindications": ["MAOI use", "Pimozide", "Thioridazine"],
+      "interactions": ["NSAIDs", "Warfarin", "Triptans"]
+    },
+    {
+      "id": "m40",
+      "name": "Paracetamol",
+      "category": "Analgesics",
+      "use": "Relief of mild to moderate pain and fever.",
+      "dosage": "500-1000 mg every 4-6 hours (max 4g/day)",
+      "sideEffects": ["Rare at therapeutic doses; liver damage in overdose"],
+      "contraindications": ["Severe hepatic impairment"],
+      "interactions": ["Alcohol", "Warfarin", "Cholestyramine"]
+    }
+  ],
+  "caseStudies": [
+    {
+      "id": "c1",
+      "title": "Acute Chest Pain in a 55-year-old Male",
+      "history": "A 55-year-old male presents to the ER with sudden onset substernal chest pain radiating to the left arm.",
+      "symptoms": "Crushing chest pain, diaphoresis, nausea.",
+      "labResults": "Elevated Troponin I, ST-segment elevation in leads II, III, and aVF.",
+      "diagnosis": "Acute Inferior Myocardial Infarction",
+      "explanation": "The clinical presentation and ECG findings are classic for an inferior wall MI, likely due to occlusion of the Right Coronary Artery (RCA)."
+    },
+    {
+      "id": "c2",
+      "title": "Progressive Shortness of Breath",
+      "history": "A 68-year-old female with a history of smoking presents with worsening dyspnea over the past 3 months.",
+      "symptoms": "Productive cough, wheezing, barrel chest, use of accessory muscles.",
+      "labResults": "Reduced FEV1/FVC ratio on spirometry, hyperinflated lungs on X-ray.",
+      "diagnosis": "Chronic Obstructive Pulmonary Disease (COPD)",
+      "explanation": "The patient's smoking history combined with obstructive patterns on spirometry and physical findings strongly suggest COPD."
+    },
+    {
+      "id": "c3",
+      "title": "Sudden Weakness and Slurred Speech",
+      "history": "A 72-year-old male is brought to the hospital after his wife noticed he couldn't move his right side and was speaking incoherently.",
+      "symptoms": "Right-sided hemiplegia, facial drooping, aphasia.",
+      "labResults": "CT scan shows no hemorrhage; MRI reveals ischemic area in the left middle cerebral artery territory.",
+      "diagnosis": "Ischemic Stroke",
+      "explanation": "Sudden focal neurological deficits in a patient with cardiovascular risk factors are highly suggestive of a stroke. Imaging confirmed an ischemic event."
+    },
+    {
+      "id": "c4",
+      "title": "Abdominal Pain and Fever",
+      "history": "A 24-year-old female presents with periumbilical pain that has shifted to the right lower quadrant.",
+      "symptoms": "Rebound tenderness at McBurney's point, fever, anorexia.",
+      "labResults": "Elevated WBC count (leukocytosis), ultrasound shows inflamed appendix.",
+      "diagnosis": "Acute Appendicitis",
+      "explanation": "The migration of pain and localized tenderness in the RLQ are classic signs of appendicitis, confirmed by leukocytosis and imaging."
+    },
+    {
+      "id": "c5",
+      "title": "Excessive Thirst and Fatigue",
+      "history": "A 10-year-old boy is brought in by his parents due to extreme thirst and frequent nighttime urination.",
+      "symptoms": "Polyuria, polydipsia, weight loss despite increased appetite.",
+      "labResults": "Random blood glucose of 350 mg/dL, ketones present in urine.",
+      "diagnosis": "Type 1 Diabetes Mellitus",
+      "explanation": "The classic triad of polyuria, polydipsia, and weight loss in a child with hyperglycemia and ketonuria indicates Type 1 Diabetes."
+    },
+    {
+      "id": "c6",
+      "title": "Joint Pain and Morning Stiffness",
+      "history": "A 45-year-old female presents with symmetrical joint pain in her hands and feet, particularly worse in the morning for over an hour.",
+      "symptoms": "Swollen, tender joints, fatigue, morning stiffness.",
+      "labResults": "Positive Rheumatoid Factor (RF) and anti-CCP antibodies, elevated ESR.",
+      "diagnosis": "Rheumatoid Arthritis",
+      "explanation": "Symmetrical small joint involvement with prolonged morning stiffness and positive serology is highly indicative of RA."
+    },
+    {
+      "id": "c7",
+      "title": "Sudden Onset of Severe Headache",
+      "history": "A 50-year-old female describes the 'worst headache of her life' that started suddenly while she was lifting a heavy object.",
+      "symptoms": "Severe headache, neck stiffness, photophobia, vomiting.",
+      "labResults": "CT head shows blood in the subarachnoid space; lumbar puncture shows xanthochromia.",
+      "diagnosis": "Subarachnoid Hemorrhage (SAH)",
+      "explanation": "A 'thunderclap' headache with meningeal signs is a medical emergency, often due to a ruptured cerebral aneurysm."
+    },
+    {
+      "id": "c8",
+      "title": "Chronic Diarrhea and Weight Loss",
+      "history": "A 32-year-old male reports chronic diarrhea, bloating, and unintentional weight loss over the past 6 months.",
+      "symptoms": "Steatorrhea, abdominal distension, fatigue.",
+      "labResults": "Positive anti-tissue transglutaminase (tTG) IgA, biopsy shows villous atrophy.",
+      "diagnosis": "Celiac Disease",
+      "explanation": "Malabsorption symptoms combined with positive serology and characteristic biopsy findings confirm Celiac disease."
+    },
+    {
+      "id": "c9",
+      "title": "Palpitations and Heat Intolerance",
+      "history": "A 28-year-old female presents with racing heart, tremors, and feeling hot even in cool environments.",
+      "symptoms": "Weight loss despite increased appetite, anxiety, fine tremor, exophthalmos.",
+      "labResults": "Low TSH, high Free T4, positive TSH receptor antibodies.",
+      "diagnosis": "Graves' Disease (Hyperthyroidism)",
+      "explanation": "Symptoms of hypermetabolism and specific eye signs (exophthalmos) with suppressed TSH point to Graves' disease."
+    },
+    {
+      "id": "c10",
+      "title": "Recurrent Wheezing in a Child",
+      "history": "A 7-year-old girl has episodes of wheezing and coughing, especially at night and during physical activity.",
+      "symptoms": "Wheezing, chest tightness, nocturnal cough.",
+      "labResults": "Reversible airflow obstruction on spirometry after bronchodilator use.",
+      "diagnosis": "Bronchial Asthma",
+      "explanation": "Recurrent respiratory symptoms with demonstrated reversibility of airflow obstruction is diagnostic of asthma."
+    },
+    {
+      "id": "c11",
+      "title": "Sudden Onset of Lower Back Pain",
+      "history": "A 40-year-old construction worker presents with acute, sharp lower back pain after lifting a heavy beam.",
+      "symptoms": "Sharp pain radiating down the left leg, numbness in the foot.",
+      "labResults": "MRI shows herniated disc at L4-L5 level compressing the nerve root.",
+      "diagnosis": "Lumbar Disc Herniation (Sciatica)",
+      "explanation": "Acute onset of radicular pain following heavy lifting is highly suggestive of disc herniation."
+    },
+    {
+      "id": "c12",
+      "title": "Persistent Fever and Night Sweats",
+      "history": "A 35-year-old male reports a low-grade fever, night sweats, and a persistent cough for the past 4 weeks.",
+      "symptoms": "Cough with occasional blood, weight loss, fatigue.",
+      "labResults": "Sputum smear positive for acid-fast bacilli, chest X-ray shows apical cavitary lesion.",
+      "diagnosis": "Pulmonary Tuberculosis",
+      "explanation": "Constitutional symptoms with characteristic X-ray findings and positive sputum smear confirm TB."
+    },
+    {
+      "id": "c13",
+      "title": "Acute Confusion in an Elderly Patient",
+      "history": "An 82-year-old female is brought in by her family due to sudden confusion and disorientation over the last 24 hours.",
+      "symptoms": "Disorientation, urinary frequency, low-grade fever.",
+      "labResults": "Urinalysis shows positive nitrites and leukocyte esterase, elevated WBC in urine.",
+      "diagnosis": "Urinary Tract Infection (UTI) with Delirium",
+      "explanation": "In elderly patients, UTIs often present with acute cognitive changes rather than typical urinary symptoms."
+    },
+    {
+      "id": "c14",
+      "title": "Severe Epigastric Pain",
+      "history": "A 48-year-old male with a history of alcohol use presents with severe, constant epigastric pain radiating to the back.",
+      "symptoms": "Nausea, vomiting, abdominal tenderness, leaning forward for relief.",
+      "labResults": "Serum amylase and lipase levels are 4 times the upper limit of normal.",
+      "diagnosis": "Acute Pancreatitis",
+      "explanation": "Classic pain pattern with significantly elevated pancreatic enzymes is diagnostic of acute pancreatitis."
+    },
+    {
+      "id": "c15",
+      "title": "Sudden Loss of Vision in One Eye",
+      "history": "A 65-year-old male with hypertension reports sudden, painless loss of vision in his right eye, described as a 'curtain coming down'.",
+      "symptoms": "Painless vision loss, flashes of light, floaters.",
+      "labResults": "Funduscopic exam shows grey, opaque retina with folds.",
+      "diagnosis": "Retinal Detachment",
+      "explanation": "Sudden painless vision loss with 'curtain' sensation and characteristic funduscopic findings is typical for retinal detachment."
+    },
+    {
+      "id": "c16",
+      "name": "Chronic Joint Pain and Stiffness",
+      "title": "Chronic Joint Pain in a 45-year-old Female",
+      "history": "A 45-year-old female presents with symmetrical joint pain in her hands and feet, worse in the morning.",
+      "symptoms": "Swollen joints, morning stiffness lasting >1 hour, fatigue.",
+      "labResults": "Positive RF and anti-CCP, elevated ESR.",
+      "diagnosis": "Rheumatoid Arthritis",
+      "explanation": "Symmetrical small joint involvement with prolonged morning stiffness and positive serology is classic for RA."
+    },
+    {
+      "id": "c17",
+      "name": "Tremors and Slow Movement",
+      "title": "Tremors and Movement Difficulty in a 62-year-old Male",
+      "history": "A 62-year-old male reports a resting tremor in his right hand and difficulty getting out of chairs.",
+      "symptoms": "Resting tremor, bradykinesia, rigid muscles, masked facies.",
+      "labResults": "Clinical diagnosis based on physical exam; DaTscan shows reduced dopamine transporters.",
+      "diagnosis": "Parkinson's Disease",
+      "explanation": "The combination of resting tremor, bradykinesia, and rigidity is the hallmark of Parkinson's disease."
+    },
+    {
+      "id": "c18",
+      "name": "Severe Unilateral Headache",
+      "title": "Recurrent Severe Headache in a 28-year-old Female",
+      "history": "A 28-year-old female presents with recurrent episodes of throbbing headache on the left side, preceded by visual disturbances.",
+      "symptoms": "Unilateral throbbing pain, photophobia, phonophobia, visual aura.",
+      "labResults": "Normal neurological exam between episodes; clinical diagnosis.",
+      "diagnosis": "Migraine with Aura",
+      "explanation": "Recurrent unilateral throbbing headaches with associated sensory sensitivities and aura are diagnostic of migraine."
+    },
+    {
+      "id": "c19",
+      "name": "Fatigue and Swelling",
+      "title": "Fatigue and Peripheral Edema in a 55-year-old Male",
+      "history": "A 55-year-old male with long-standing hypertension reports progressive fatigue and swelling in his ankles.",
+      "symptoms": "Fatigue, ankle edema, nausea, metallic taste in mouth.",
+      "labResults": "eGFR of 25 mL/min/1.73m², elevated creatinine, proteinuria.",
+      "diagnosis": "Chronic Kidney Disease (Stage 4)",
+      "explanation": "Reduced eGFR and proteinuria in the context of hypertension indicate advanced chronic kidney disease."
+    },
+    {
+      "id": "c20",
+      "name": "Heartburn and Regurgitation",
+      "title": "Chronic Heartburn in a 40-year-old Male",
+      "history": "A 40-year-old male reports frequent heartburn and a sour taste in his mouth, especially after large meals and at night.",
+      "symptoms": "Heartburn, regurgitation, dry cough, sore throat.",
+      "labResults": "Endoscopy shows signs of esophagitis.",
+      "diagnosis": "Gastroesophageal Reflux Disease (GERD)",
+      "explanation": "Classic symptoms of reflux confirmed by endoscopic evidence of esophageal inflammation."
+    }
+  ],
+  "guidelines": [
+    {
+      "id": "g1",
+      "title": "Fever Management Protocol",
+      "category": "General Medicine",
+      "description": "Steps to evaluate and manage a patient with fever",
+      "protocol": [
+        "Check temperature using a reliable thermometer",
+        "Check for associated symptoms (cough, rash, neck stiffness)",
+        "Order blood tests (CBC, CRP) or cultures if infection is suspected",
+        "Start antipyretics (e.g., Paracetamol) and treat the underlying cause"
+      ],
+      "whenToUse": "When a patient presents with a body temperature above 38°C (100.4°F).",
+      "notes": "Always rule out red flags like meningitis or sepsis in pediatric and elderly patients.",
+      "image": "https://picsum.photos/seed/thermometer/800/400"
+    },
+    {
+      "id": "g2",
+      "title": "Chest Pain Evaluation Protocol",
+      "category": "Cardiology Guidelines",
+      "description": "Systematic approach to evaluating acute chest pain",
+      "protocol": [
+        "Perform immediate 12-lead ECG within 10 minutes",
+        "Assess ABCs (Airway, Breathing, Circulation)",
+        "Obtain cardiac biomarkers (Troponin)",
+        "Administer Aspirin 325mg if ACS is suspected",
+        "Determine if reperfusion therapy is needed"
+      ],
+      "whenToUse": "Any patient presenting with acute chest discomfort or suspected ACS.",
+      "notes": "Time is muscle. Minimize delays to reperfusion.",
+      "image": "https://picsum.photos/seed/ecg/800/400"
+    }
+  ]
+}
